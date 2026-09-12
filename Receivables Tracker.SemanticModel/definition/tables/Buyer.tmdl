@@ -1,5 +1,5 @@
 table Buyer
-	lineageTag: 4fc909b2-f99b-4cc9-ae81-f81fa06d0ece
+	lineageTag: 83a43b79-9ab1-4965-9364-455078c16885
 
 	column "Buyer" =
 		```
@@ -7,7 +7,7 @@ table Buyer
 		```
 		dataType: string
 		isDataTypeInferred
-		lineageTag: df496ff5-db1f-4683-8708-3b1e795188cb
+		lineageTag: 73dc1e60-4184-482d-be6c-650e2b0fd7a1
 		summarizeBy: none
 		description: "Distinct buyers, derived from the receivables rows."
 
@@ -16,11 +16,11 @@ table Buyer
 		CALCULATE ( [Lot Count] )
 		```
 		formatString: "#,##0"
-		lineageTag: 98cde87a-f64a-43cc-8d0d-a0cef39937eb
+		lineageTag: 38a0936f-66a2-44e5-8f22-65fc6a2d3a0c
 
 	measure "Buyer Outstanding" =
 		```
 		CALCULATE ( [Outstanding] )
 		```
 		formatString: "#,##0.00"
-		lineageTag: 8f5f9560-f28f-448b-8412-9d67025c6a1f
+		lineageTag: 99816637-aad6-4d5d-a796-86c5a8804f04

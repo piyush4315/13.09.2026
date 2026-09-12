@@ -128,38 +128,64 @@ def check_structure():
         warn("jsonschema is not installed - official schema validation skipped")
         return n_json
 
-    schema_map = [
-        (f"{PROJECT}.pbip", "common/pbip-1.0.json"),
-        (f"{PROJECT}.Report/item.config.json", "common/item.config-1.0.json"),
-        (f"{PROJECT}.Report/item.metadata.json", "common/item.metadata-1.0.json"),
-        (f"{PROJECT}.Report/definition.pbir", "report/definition.pbir-1.0.json"),
-        (f"{PROJECT}.Report/.pbi/localSettings.json", "report/localSettings-1.0.json"),
-        (f"{PROJECT}.SemanticModel/item.config.json", "common/item.config-1.0.json"),
-        (f"{PROJECT}.SemanticModel/item.metadata.json", "common/item.metadata-1.0.json"),
-        (f"{PROJECT}.SemanticModel/definition.pbidataset", "dataset/definition.pbidataset-1.0.json"),
-        (f"{PROJECT}.SemanticModel/.pbi/editorSettings.json", "dataset/editorSettings-1.0.json"),
+    # ------------------------------------------------------------------
+    # The schemas Power BI Desktop actually validates against live in
+    # microsoft/json-schemas. The older microsoft/powerbi-desktop-samples
+    # item-schemas (2023) predate the mandatory "$schema" property and will
+    # happily pass a file that Desktop rejects - so the authoritative set is
+    # the one that decides pass/fail.
+    # ------------------------------------------------------------------
+    AUTH = os.path.join(SCHEMAS, "authoritative")
+    authoritative = [
+        (f"{PROJECT}.pbip", "pbip.pbipProperties-1.0.0.json"),
+        (f"{PROJECT}.Report/.platform", "platformProperties-2.0.0.json"),
+        (f"{PROJECT}.Report/definition.pbir", "report.definitionProperties-2.0.0.json"),
+        (f"{PROJECT}.Report/.pbi/localSettings.json", "report.localSettings-1.0.0.json"),
+        (f"{PROJECT}.SemanticModel/.platform", "platformProperties-2.0.0.json"),
+        (f"{PROJECT}.SemanticModel/definition.pbidataset", "semanticModel.definitionProperties-1.0.0.json"),
+        (f"{PROJECT}.SemanticModel/.pbi/editorSettings.json", "semanticModel.editorSettings-1.0.0.json"),
     ]
-    for rel, schema_rel in schema_map:
-        sp = os.path.join(SCHEMAS, schema_rel)
+    validated = 0
+    for rel, schema_name in authoritative:
+        sp = os.path.join(AUTH, schema_name)
         if not os.path.isfile(sp):
-            warn(f"official schema not cached locally: {schema_rel}")
+            err(f"authoritative schema missing from .schemas/authoritative: {schema_name}")
             continue
-        schema = jload(sp)
         try:
             instance = jload(os.path.join(REPO, rel))
         except Exception:
             continue
-        v = jsonschema.Draft7Validator(schema)
-        for p in sorted(v.iter_errors(instance), key=lambda e: list(e.path)):
-            loc = "/".join(str(x) for x in p.path) or "<root>"
-            # the 2023 item-schemas predate the "$schema" property that current
-            # Power BI Desktop writes; flag every other additional property.
-            if p.validator == "additionalProperties" and p.message.startswith("Additional properties") \
-                    and "'$schema' was unexpected" in p.message:
-                warn(f"{rel}: '$schema' is not in the 2023 official schema "
-                     f"(written by current Desktop; kept intentionally)")
-                continue
-            err(f"official schema {os.path.basename(schema_rel)} violation in {rel} @ {loc}: {p.message}")
+        v = jsonschema.Draft7Validator(jload(sp))
+        problems = sorted(v.iter_errors(instance), key=lambda e: list(e.path))
+        if problems:
+            for pr in problems:
+                loc = "/".join(str(x) for x in pr.path) or "<root>"
+                err(f"{rel} violates the authoritative schema {schema_name} @ {loc}: {pr.message}")
+        else:
+            validated += 1
+        # the $schema URL must point at the schema family it claims to follow
+        claimed = instance.get("$schema")
+        expected_id = jload(sp).get("$id")
+        if claimed and expected_id and claimed != expected_id:
+            err(f"{rel}: $schema is {claimed} but the file is being validated as {expected_id}")
+
+    if validated != len(authoritative):
+        err(f"only {validated}/{len(authoritative)} item files validate against the "
+            f"authoritative microsoft/json-schemas definitions")
+
+    # definition.pbir: the version must match the schema family and be a format
+    # current Desktop accepts (1.0 is the legacy PBIR-Legacy-only value).
+    pbir = jload(os.path.join(REPORT_DIR, "definition.pbir"))
+    ver = str(pbir.get("version"))
+    m = re.search(r"definitionProperties/(\d+)\.", str(pbir.get("$schema", "")))
+    if m and ver.split(".")[0] == "1" and m.group(1) != "1":
+        err(f"definition.pbir: version {ver!r} is paired with the "
+            f"definitionProperties/{m.group(1)}.x schema - the two must agree")
+    if ver.split(".")[0] == "1":
+        warn(f"definition.pbir version {ver!r} is the legacy PBIR-Legacy-only value; "
+             f"current Desktop writes 4.0")
+    if not (pbir.get("datasetReference") or {}).get("byPath", {}).get("path"):
+        err("definition.pbir: datasetReference.byPath.path is missing")
     return n_json
 
 

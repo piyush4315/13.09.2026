@@ -1,5 +1,5 @@
 table "Invoice Date"
-	lineageTag: 65b514f7-a90d-467a-a8f7-41a1f3949f21
+	lineageTag: 59cb60a8-dff2-43be-ba31-0fbe33ce133b
 
 	column "Date" =
 		```
@@ -9,7 +9,7 @@ table "Invoice Date"
 		formatString: "dd/mm/yyyy"
 		isDataTypeInferred
 		isKey
-		lineageTag: 4e257e6d-4dc3-44d9-a104-282b9f1e737a
+		lineageTag: 8a616663-4ad4-450e-bd7e-4ea5a923ef96
 		summarizeBy: none
 
 	column "DateKey" =
@@ -20,7 +20,7 @@ table "Invoice Date"
 		formatString: "0"
 		isDataTypeInferred
 		isHidden
-		lineageTag: a5304d18-7e91-4b80-9722-8ba0a5ff476d
+		lineageTag: 72994901-690c-49ff-8ee3-0fc03da063bb
 		summarizeBy: none
 
 	column "Month" =
@@ -29,7 +29,7 @@ table "Invoice Date"
 		```
 		dataType: string
 		isDataTypeInferred
-		lineageTag: 34c79813-f877-403d-be6e-12198b2ae606
+		lineageTag: 1e989a3c-0f9d-4724-8515-45c0292de5f6
 		sortByColumn: "MonthKey"
 		summarizeBy: none
 
@@ -41,7 +41,7 @@ table "Invoice Date"
 		formatString: "0"
 		isDataTypeInferred
 		isHidden
-		lineageTag: 8ace14d5-6224-456a-ab06-502949252516
+		lineageTag: e10b5e58-4044-42d8-a5ef-37dbcdc025c1
 		summarizeBy: none
 
 	measure "Day Count" =
@@ -50,4 +50,4 @@ table "Invoice Date"
 		```
 		formatString: "#,##0"
 		isHidden
-		lineageTag: f7b1abc8-2802-4c3a-b4e6-876cccd4665f
+		lineageTag: 365997b3-b2f2-4af6-99e6-58131897765f

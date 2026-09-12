@@ -33,6 +33,19 @@ XLSX = os.path.join(REPO, "Book1.xlsx")
 SHEET = "Final Calculation Sheet"
 
 PROJECT = "Receivables Tracker"
+
+# Schema URLs from microsoft/json-schemas - the schemas Power BI Desktop validates
+# against. Every one of these files *requires* a $schema property.
+SCHEMA = "https://developer.microsoft.com/json-schemas/fabric"
+S_PBIP = f"{SCHEMA}/pbip/pbipProperties/1.0.0/schema.json"
+S_PLATFORM = f"{SCHEMA}/gitIntegration/platformProperties/2.0.0/schema.json"
+S_PBIR = f"{SCHEMA}/item/report/definitionProperties/2.0.0/schema.json"
+S_PBISM = f"{SCHEMA}/item/semanticModel/definitionProperties/1.0.0/schema.json"
+S_REPORT_LOCAL = f"{SCHEMA}/item/report/localSettings/1.0.0/schema.json"
+S_SM_EDITOR = f"{SCHEMA}/item/semanticModel/editorSettings/1.0.0/schema.json"
+
+# Report-definition format version. 4.0 = PBIR-Legacy (report.json) or PBIR (definition/).
+PBIR_VERSION = "4.0"
 REPORT_DIR = f"{PROJECT}.Report"
 MODEL_DIR = f"{PROJECT}.SemanticModel"
 DATA_REL = "Data/receivables.csv"
@@ -738,13 +751,14 @@ def main() -> int:
     mdl = os.path.join(root, MODEL_DIR)
 
     write(os.path.join(root, f"{PROJECT}.pbip"), jdump({
+        "$schema": S_PBIP,
         "version": "1.0",
         "artifacts": [{"report": {"path": REPORT_DIR}}],
         "settings": {"enableAutoRecovery": True},
     }))
 
     write(os.path.join(rep, ".platform"), jdump({
-        "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+        "$schema": S_PLATFORM,
         "metadata": {"type": "Report", "displayName": PROJECT},
         "config": {"version": "2.0", "logicalId": str(uuid.uuid4())},
     }))
@@ -754,11 +768,11 @@ def main() -> int:
         "description": "MSTC scrap-auction receivables tracker built from Book1.xlsx.",
     }))
     write(os.path.join(rep, "definition.pbir"), jdump({
-        "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json",
-        "version": "1.0",
+        "$schema": S_PBIR,
+        "version": PBIR_VERSION,
         "datasetReference": {"byPath": {"path": f"../{MODEL_DIR}"}},
     }))
-    write(os.path.join(rep, ".pbi", "localSettings.json"), jdump({"version": "1.0"}))
+    write(os.path.join(rep, ".pbi", "localSettings.json"), jdump({"$schema": S_REPORT_LOCAL}))
     write(os.path.join(rep, "report.json"), jdump(build_report_json()))
     write(os.path.join(rep, "StaticResources", "SharedResources", "BaseThemes", "CY24SU06.json"),
           jdump(BASE_THEME))
@@ -767,7 +781,7 @@ def main() -> int:
         write(os.path.join(rep, d, ".gitkeep"), "")
 
     write(os.path.join(mdl, ".platform"), jdump({
-        "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+        "$schema": S_PLATFORM,
         "metadata": {"type": "SemanticModel", "displayName": PROJECT},
         "config": {"version": "2.0", "logicalId": str(uuid.uuid4())},
     }))
@@ -777,11 +791,12 @@ def main() -> int:
         "description": "TMDL semantic model for the MSTC scrap-auction receivables tracker.",
     }))
     write(os.path.join(mdl, "definition.pbidataset"), jdump({
+        "$schema": S_PBISM,
         "version": "1.0",
         "settings": {"qnaEnabled": False, "qnaLsdlSharingPermissions": 0},
     }))
     write(os.path.join(mdl, ".pbi", "editorSettings.json"), jdump({
-        "version": "1.0",
+        "$schema": S_SM_EDITOR,
         "showHiddenFields": True,
         "autodetectRelationships": False,
         "parallelQueryLoading": True,

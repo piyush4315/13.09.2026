@@ -1,11 +1,11 @@
-relationship 8e41b588-c205-4135-a546-380a32d9642d
+relationship 14093c7d-6148-4054-9001-c79d8ed8fd70
 	fromColumn: Receivables."SD Receipt Date"
 	toColumn: Receipt Date."Date"
 	cardinality: manyToOne
 	crossFilteringBehavior: single
 	description: "Security-deposit receipt date to calendar"
 
-relationship fe52a44a-e075-4b09-8a14-5505df66e612
+relationship fee9d3b3-8ec8-4ae4-95cc-7926b7b3a15e
 	fromColumn: Receivables."FP Receipt Date"
 	toColumn: Receipt Date."Date"
 	cardinality: manyToOne
@@ -13,14 +13,14 @@ relationship fe52a44a-e075-4b09-8a14-5505df66e612
 	isActive: false
 	description: "Final-payment receipt date to calendar (inactive - use USERELATIONSHIP)"
 
-relationship a807d4cf-1b90-49a2-a989-c5dc0e3b7748
+relationship 6b999c7f-7985-4247-8bbf-84af2481bcde
 	fromColumn: Receivables."Invoice Date"
 	toColumn: Invoice Date."Date"
 	cardinality: manyToOne
 	crossFilteringBehavior: single
 	description: "Invoice / SAP document date to calendar"
 
-relationship c6d67b6d-b4df-46c0-83ca-f825bde867bb
+relationship 20dc374e-3555-47b9-b503-4d3a9edcb53d
 	fromColumn: Receivables."Buyer"
 	toColumn: Buyer."Buyer"
 	cardinality: manyToOne

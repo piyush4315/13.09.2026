@@ -95,11 +95,48 @@ unpaid lots.
 This matters because the first version of the suite scored 12/15: it silently missed a bad
 table reference and a wrong DAX constant. Both gaps were closed before the run above.
 
+## Postmortem — the bug Power BI Desktop caught and this suite did not
+
+Opening the project in Power BI Desktop (August 2026, 2.157.1354.0) failed with:
+
+> `ReportDefinition: Required artifact is missing in '...\definition.pbir'`
+> `InnerException0: RequiredArtifactMissing: Path: definition.pbir`
+> `InnerException1: PBIProjectSchemaValidator.IsJsonLegallyEmpty(...)`
+
+**Cause.** `definition.pbir` was written as `"version": "1.0"` while its `$schema` pointed
+at `definitionProperties/2.0.0`. Desktop's `PBIProjectSchemaValidator` tries each schema
+variant in turn and, when none matches, reports the artifact as missing. The 1.0.0 schema
+requires the `$schema` URL to match `definitionProperties/1.[0-9]+.[0-9]+`, so the file
+matched neither variant. The documented, current pairing is `"version": "4.0"` with
+`definitionProperties/2.0.0` — and per Microsoft's docs, version 4.0 still allows the
+PBIR-Legacy `report.json` this project uses.
+
+**Why the suite missed it.** It validated against `microsoft/powerbi-desktop-samples/
+item-schemas` (published June 2023). Those schemas have no `$schema` property and set
+`additionalProperties: false` — so they flagged `$schema` as *unexpected*, and the suite
+downgraded that to a benign warning with the note "written by current Desktop; kept
+intentionally". That warning was the bug. The authoritative schemas live in
+**`microsoft/json-schemas`**, and there `$schema` is **required** in every item file.
+
+**Five files had the same defect**, not just `definition.pbir`:
+
+| File | Was | Now |
+| --- | --- | --- |
+| `Receivables Tracker.pbip` | no `$schema` | `fabric/pbip/pbipProperties/1.0.0` |
+| `…Report/definition.pbir` | `$schema` 2.0.0 + `version` 1.0 (mismatch) | `$schema` 2.0.0 + `version` **4.0** |
+| `…Report/.pbi/localSettings.json` | `{"version":"1.0"}` | `fabric/item/report/localSettings/1.0.0` |
+| `…SemanticModel/definition.pbidataset` | no `$schema` | `fabric/item/semanticModel/definitionProperties/1.0.0` |
+| `…SemanticModel/.pbi/editorSettings.json` | `{"version":"1.0"}` | `fabric/item/semanticModel/editorSettings/1.0.0` |
+
+**Fix.** `.schemas/authoritative/` now holds the `microsoft/json-schemas` definitions, the
+suite validates against those and fails on any mismatch, the `$schema`-is-unexpected
+warning is gone, and a new check asserts that `definition.pbir`'s `$schema` family agrees
+with its `version`. The mutation run was extended to 24 cases, including a byte-for-byte
+reproduction of the Desktop failure; **24/24 are now detected**.
+
 ## Remaining warnings (all benign, kept on purpose)
 
-1. `definition.pbir` carries a `$schema` property that Microsoft's 2023 schema does not
-   list. Current Power BI Desktop writes it, and VS Code uses it for IntelliSense.
-2. Three tables (`Buyer`, `Receipt Date`, `Invoice Date`) are DAX calculated tables, so no
+1. Three tables (`Buyer`, `Receipt Date`, `Invoice Date`) are DAX calculated tables, so no
    partition is emitted for them.
 3. Four names exist as both a column and a measure (`Material Value`,
    `Security Deposit (Received)`, `Final Payment (Received)`, `LPP Received`) so the report

@@ -11,7 +11,9 @@ Receivables Tracker.pbip                    <- open this file
 ├── Data/receivables.csv                    the 37 rows, readable/diffable source of truth
 ├── tools/build_pbip.py                     regenerates the whole project from Book1.xlsx
 ├── tools/test_pbip.py                      the test suite (see below)
-└── .schemas/                               Microsoft's official item JSON Schemas (used by the tests)
+└── .schemas/                               Microsoft's item JSON Schemas (used by the tests)
+                                              .schemas/authoritative/ = microsoft/json-schemas, the
+                                              set Power BI Desktop actually validates against
 ```
 
 ## Open it
@@ -81,6 +83,12 @@ python3 tools/build_pbip.py     # regenerate the project from Book1.xlsx
 python3 tools/test_pbip.py      # run the test suite (exit code 0 = pass)
 python3 tools/test_pbip.py --verbose
 ```
+
+Item files are validated against **`microsoft/json-schemas`** (`.schemas/authoritative/`) —
+the schemas Power BI Desktop itself uses. The older `microsoft/powerbi-desktop-samples`
+item-schemas from 2023 are *not* authoritative: they predate the now-mandatory `$schema`
+property and will pass a project that Desktop refuses to open. See the postmortem in
+`VALIDATION-REPORT.md`.
 
 Nine groups: official Microsoft JSON-Schema validation of the item files; project
 cross-references; a full TMDL parse; model integrity (types, `sortByColumn`, partitions,

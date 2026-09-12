@@ -1,5 +1,5 @@
 table Receivables
-	lineageTag: 8bf42664-cc7a-4ca7-94c7-4f6ce6c2a6a1
+	lineageTag: 26f82ebf-1295-418f-802b-12f3eb0494e9
 
 	partition Receivables
 		mode: import
@@ -11,7 +11,7 @@ table Receivables
 	column "Quantity"
 		dataType: double
 		formatString: "#,##0.###"
-		lineageTag: 2eb2002e-da9c-4674-a845-0435588bdd6d
+		lineageTag: bb063b8b-ae17-485d-b204-1e7fa18950ad
 		summarizeBy: sum
 		description: "Excel column A of 'Final Calculation Sheet'."
 		annotations
@@ -19,7 +19,7 @@ table Receivables
 
 	column "Lot Name"
 		dataType: string
-		lineageTag: b0f7a5aa-b9c2-4909-b201-180ceb5309b9
+		lineageTag: 2fefde2f-02f3-4786-aac2-49f4d4a42eb0
 		summarizeBy: none
 		description: "Excel column B of 'Final Calculation Sheet'."
 		annotations
@@ -28,7 +28,7 @@ table Receivables
 	column "Rate"
 		dataType: double
 		formatString: "#,##0.##"
-		lineageTag: 650e8f2d-fa21-4880-aa3e-1c6d992907d8
+		lineageTag: 9f1cd593-edc3-47e8-8eb4-fe9b1e697282
 		summarizeBy: sum
 		description: "Excel column C of 'Final Calculation Sheet'."
 		annotations
@@ -37,7 +37,7 @@ table Receivables
 	column "Bid Sheet"
 		dataType: int64
 		formatString: "0"
-		lineageTag: 18e4b1e9-ff6e-4221-9bb9-bd1c6d42db42
+		lineageTag: 4d0bccd3-3b96-47cc-b112-f420630ac399
 		summarizeBy: none
 		description: "Excel column D of 'Final Calculation Sheet'."
 		annotations
@@ -45,7 +45,7 @@ table Receivables
 
 	column "Unit"
 		dataType: string
-		lineageTag: 3016c268-06a5-4f3a-9b06-3fb5bbff2ac2
+		lineageTag: 4c157cb6-3018-4027-8c66-4cc35f3e9760
 		summarizeBy: none
 		description: "Excel column E of 'Final Calculation Sheet'."
 		annotations
@@ -54,7 +54,7 @@ table Receivables
 	column "Lot No."
 		dataType: int64
 		formatString: "0"
-		lineageTag: 00c875c8-7664-43a2-83df-9dccad54e5d6
+		lineageTag: 23ee7838-f97b-4c7a-8825-ffd8cecdec5d
 		summarizeBy: none
 		description: "Excel column F of 'Final Calculation Sheet'."
 		annotations
@@ -62,7 +62,7 @@ table Receivables
 
 	column "Buyer"
 		dataType: string
-		lineageTag: df29226a-110d-40e8-a89f-83dd62dfe803
+		lineageTag: 2411d464-437a-4802-95de-826de65588c6
 		summarizeBy: none
 		description: "Excel column G of 'Final Calculation Sheet'."
 		annotations
@@ -71,7 +71,7 @@ table Receivables
 	column "Material Value"
 		dataType: int64
 		formatString: "#,##0"
-		lineageTag: eb40213b-991a-4153-bc72-dc42b35f9a35
+		lineageTag: fa2ecc1d-25dd-40d6-adc1-f4bbc1f5e9ae
 		summarizeBy: sum
 		description: "Excel column H of 'Final Calculation Sheet'."
 		annotations
@@ -80,7 +80,7 @@ table Receivables
 	column "GST TDS Rate"
 		dataType: double
 		formatString: "0.00%"
-		lineageTag: b6c33d3a-f255-41a8-abc4-1c5819efcce3
+		lineageTag: 5b782e76-cce0-43b7-b9c4-51b4b7527b91
 		summarizeBy: none
 		description: "Excel column Q of 'Final Calculation Sheet'."
 		annotations
@@ -89,7 +89,7 @@ table Receivables
 	column "Security Deposit (Received)"
 		dataType: double
 		formatString: "#,##0"
-		lineageTag: 927b386c-4d1f-4498-8070-ddeef648511a
+		lineageTag: 7ff7df83-68f9-4500-878b-ed9a798a0ca3
 		summarizeBy: sum
 		description: "Excel column U of 'Final Calculation Sheet'."
 		annotations
@@ -97,7 +97,7 @@ table Receivables
 
 	column "SD Receipt Date (Text)"
 		dataType: string
-		lineageTag: 36d12db8-c20e-4f26-8028-77511940513b
+		lineageTag: e0cd859a-5220-4572-a5ee-0380e6755bd6
 		summarizeBy: none
 		description: "Excel column V of 'Final Calculation Sheet'."
 		annotations
@@ -106,7 +106,7 @@ table Receivables
 	column "Final Payment (Received)"
 		dataType: double
 		formatString: "#,##0.00"
-		lineageTag: 8f9a5d9a-c0da-4b3b-9899-48e03aa8143f
+		lineageTag: ea31e801-df20-4b30-950f-2dcad5cd423f
 		summarizeBy: sum
 		description: "Excel column X of 'Final Calculation Sheet'."
 		annotations
@@ -114,7 +114,7 @@ table Receivables
 
 	column "FP Receipt Date (Text)"
 		dataType: string
-		lineageTag: 7adb4daa-296c-4dae-8d40-9d231bb3baf6
+		lineageTag: 911507f4-01b1-453f-92f3-66ddddd89c39
 		summarizeBy: none
 		description: "Excel column Y of 'Final Calculation Sheet'."
 		annotations
@@ -123,7 +123,7 @@ table Receivables
 	column "LPP Received"
 		dataType: double
 		formatString: "#,##0.00"
-		lineageTag: 76b9e080-30e3-46cc-b81b-707520b199bc
+		lineageTag: 57a33c96-d499-4dac-816e-c1f06f53293b
 		summarizeBy: sum
 		description: "Excel column AA of 'Final Calculation Sheet'."
 		annotations
@@ -131,7 +131,7 @@ table Receivables
 
 	column "LPP Receipt Date (Text)"
 		dataType: string
-		lineageTag: 4da6bd13-262e-4e94-88a3-39caa7b300fb
+		lineageTag: eecff710-058c-4f07-b62a-6158801810fd
 		summarizeBy: none
 		description: "Excel column AB of 'Final Calculation Sheet'."
 		annotations
@@ -139,7 +139,7 @@ table Receivables
 
 	column "Payment Status (Sheet)"
 		dataType: string
-		lineageTag: d692521d-703d-42e7-9c21-3431fbe82601
+		lineageTag: 3e4d78fa-3e7c-450b-9218-70056c4e7507
 		summarizeBy: none
 		description: "Excel column AE of 'Final Calculation Sheet'."
 		annotations
@@ -147,7 +147,7 @@ table Receivables
 
 	column "Invoice No."
 		dataType: string
-		lineageTag: 5bdd8b6a-eb48-4802-a8ea-5de494f07ac9
+		lineageTag: 72b4186c-a9e7-403e-922a-a52429dba305
 		summarizeBy: none
 		description: "Excel column AF of 'Final Calculation Sheet'."
 		annotations
@@ -155,7 +155,7 @@ table Receivables
 
 	column "SAP Document"
 		dataType: string
-		lineageTag: 17bac3cc-11f7-4e0d-97a7-6b1cf0353669
+		lineageTag: ab1b1a6b-c616-4cef-87ce-c404f3acec4e
 		summarizeBy: none
 		description: "Excel column AG of 'Final Calculation Sheet'."
 		annotations
@@ -163,7 +163,7 @@ table Receivables
 
 	column "Invoice Date (Text)"
 		dataType: string
-		lineageTag: a47aa495-04e7-46f4-8109-3cf4b8e38dac
+		lineageTag: d464e3a1-791c-4fd1-95cb-8ed387d6ca1f
 		summarizeBy: none
 		description: "Excel column AH of 'Final Calculation Sheet'."
 		annotations
@@ -182,7 +182,7 @@ table Receivables
 		dataType: dateTime
 		formatString: "dd/mm/yyyy"
 		isDataTypeInferred
-		lineageTag: 13050c4e-0d60-43a7-9573-fa4c17890ed4
+		lineageTag: f7fbd8dc-0116-47fb-ae54-12466f53a80b
 		summarizeBy: none
 		description: "True date parsed from 'SD Receipt Date (Text)' (dd.mm.yyyy on the sheet)."
 
@@ -199,7 +199,7 @@ table Receivables
 		dataType: dateTime
 		formatString: "dd/mm/yyyy"
 		isDataTypeInferred
-		lineageTag: fdc1a257-1c71-4994-91f3-e5b132923fa0
+		lineageTag: 5c1a0443-f2d7-4023-97ae-b51a854eea96
 		summarizeBy: none
 		description: "True date parsed from 'FP Receipt Date (Text)'."
 
@@ -216,7 +216,7 @@ table Receivables
 		dataType: dateTime
 		formatString: "dd/mm/yyyy"
 		isDataTypeInferred
-		lineageTag: d0bbc032-6d7d-4439-8e67-e41c15662768
+		lineageTag: 160e631d-e676-4cb7-85d0-010e7048e4dc
 		summarizeBy: none
 		description: "True date parsed from 'LPP Receipt Date (Text)'."
 
@@ -233,7 +233,7 @@ table Receivables
 		dataType: dateTime
 		formatString: "dd/mm/yyyy"
 		isDataTypeInferred
-		lineageTag: d6c67147-67a6-4eac-9ee1-560ea7da268d
+		lineageTag: 0ec75d8a-54fc-4414-aa5a-84f88df459ab
 		summarizeBy: none
 		description: "True date parsed from 'Invoice Date (Text)' (Excel column AH)."
 
@@ -255,7 +255,7 @@ table Receivables
 		formatString: "#,##0.00"
 		isDataTypeInferred
 		isHidden
-		lineageTag: 4e67cdc4-3a1e-4a86-b63b-8025479a7c99
+		lineageTag: 59c6bbfc-6b8a-47ad-bebb-7635a3d62c80
 		summarizeBy: sum
 		description: "Row-level late payment penalty. Hidden - consumed by [Outstanding Calc]."
 
@@ -276,7 +276,7 @@ table Receivables
 		formatString: "#,##0.00"
 		isDataTypeInferred
 		isHidden
-		lineageTag: c7f2c814-7ed6-4c9d-9b44-a91dd3380225
+		lineageTag: aefa14fd-404b-4060-a745-7b2bdcf89a34
 		summarizeBy: sum
 		description: "Row-level outstanding amount. Hidden - consumed by the payment-status measures."
 
@@ -286,7 +286,7 @@ table Receivables
 		```
 		dataType: string
 		isDataTypeInferred
-		lineageTag: 0bafd7eb-6dd8-45c8-85a9-4019d27f2770
+		lineageTag: a830717c-2587-4fe6-b559-7d63fb018553
 		summarizeBy: none
 		description: "SETTLED when the row-level Outstanding is 5 or less, otherwise OUTSTANDING. Recomputed from the inputs; mirrors Excel column AE. Compare with [Payment Status (Sheet)] to spot rows the spreadsheet has not recalculated."
 
@@ -295,7 +295,7 @@ table Receivables
 		COUNTROWS ( 'Receivables' )
 		```
 		formatString: "#,##0"
-		lineageTag: b36ca4ed-a8ce-4514-a1dc-e4c4a5ca713b
+		lineageTag: 262833d8-5bb1-47b4-90a7-c281c4009e17
 		description: "Number of lots in the current filter context."
 
 	measure "Material Value" =
@@ -303,7 +303,7 @@ table Receivables
 		SUM ( 'Receivables'[Material Value] )
 		```
 		formatString: "#,##0"
-		lineageTag: 34101dfd-5311-4fca-a9d9-7e4f73268375
+		lineageTag: 2c78074d-65a9-45d0-9f67-c3c1454de93d
 		description: "Excel column H - auction material value before tax."
 
 	measure "GST" =
@@ -311,7 +311,7 @@ table Receivables
 		SUMX ( 'Receivables', ROUND ( 'Receivables'[Material Value] * 0.18, 0 ) )
 		```
 		formatString: "#,##0"
-		lineageTag: a254c4f3-7209-4511-9299-56716967fd19
+		lineageTag: de4cf0aa-61bd-4c1e-b94c-ee9cb1591279
 		description: "Excel column I - ROUND( Material Value * 18%, 0 )."
 
 	measure "Material Value incl. GST" =
@@ -322,7 +322,7 @@ table Receivables
 		)
 		```
 		formatString: "#,##0"
-		lineageTag: 193b988d-9067-4ad6-a0e2-e0712c21c7ec
+		lineageTag: 1b099ccf-c94a-4b43-bc9c-07dc16c07a4c
 		description: "Excel column J - Material Value + GST."
 
 	measure "TCS" =
@@ -333,7 +333,7 @@ table Receivables
 		)
 		```
 		formatString: "#,##0"
-		lineageTag: 5c8f718a-8709-43b8-9c99-74f65d047d11
+		lineageTag: 7cfeb662-28b8-42d5-9e27-ee8a6a1d26b2
 		description: "Excel column K - ROUND( ( Material Value + GST ) * 2%, 0 )."
 
 	measure "TDS u/s 194(O)" =
@@ -341,7 +341,7 @@ table Receivables
 		SUMX ( 'Receivables', 'Receivables'[Material Value] * 0.001 )
 		```
 		formatString: "#,##0.00"
-		lineageTag: e17c46bc-cab8-49ed-b2e5-2858c155716f
+		lineageTag: 82748ddc-57b3-4023-a314-5d4ac13c210a
 		description: "Excel column L - Material Value * 0.1% (source is not rounded)."
 
 	measure "Service Charge to MSTC" =
@@ -349,7 +349,7 @@ table Receivables
 		SUMX ( 'Receivables', 'Receivables'[Material Value] * 0.0225 * 1.18 )
 		```
 		formatString: "#,##0.00"
-		lineageTag: 6ba837b7-1194-47a5-9765-9c69cf1413ca
+		lineageTag: 9f10d05e-fc14-4f15-abfa-864ec2ec7abf
 		description: "Excel column M - Material Value * 2.25% * 118%."
 
 	measure "TDS u/s 194(H)" =
@@ -357,7 +357,7 @@ table Receivables
 		SUMX ( 'Receivables', 'Receivables'[Material Value] * 0.0225 * 0.02 )
 		```
 		formatString: "#,##0.00"
-		lineageTag: 6ae56607-b587-40a5-8094-b1aefcb96d2f
+		lineageTag: 4333c7f3-5af1-4b13-9575-8140926fd348
 		description: "Excel column N - Material Value * 2.25% * 2%."
 
 	measure "Net Service Charge" =
@@ -365,7 +365,7 @@ table Receivables
 		SUMX ( 'Receivables', 'Receivables'[Material Value] * 0.0225 * ( 1.18 - 0.02 ) )
 		```
 		formatString: "#,##0.00"
-		lineageTag: 94b2be4c-97cf-4d9f-a213-71f12b3a3d5c
+		lineageTag: 7a1f5ce6-abea-4457-927d-a163966f14e0
 		description: "Excel column O - Service Charge to MSTC - TDS u/s 194(H)."
 
 	measure "Service Charge to MSTC (Net)" =
@@ -376,7 +376,7 @@ table Receivables
 		)
 		```
 		formatString: "#,##0"
-		lineageTag: 805cb41f-fa29-4a48-87c0-7957d5ce2934
+		lineageTag: 8f4d936f-3604-4f54-9407-51ff42f4199d
 		description: "Excel column P - ROUND( Net Service Charge + TDS u/s 194(O), 0 )."
 
 	measure "GST TDS" =
@@ -384,7 +384,7 @@ table Receivables
 		SUMX ( 'Receivables', ROUND ( 'Receivables'[Material Value] * 'Receivables'[GST TDS Rate], 0 ) )
 		```
 		formatString: "#,##0"
-		lineageTag: 477110f6-64e2-4c8b-bbf0-f72d1c207725
+		lineageTag: de694538-d58c-4af8-8071-2afefed7ae2a
 		description: "Excel column R - ROUND( Material Value * GST TDS Rate, 0 )."
 
 	measure "LPP Expected" =
@@ -392,7 +392,7 @@ table Receivables
 		SUMX ( 'Receivables', 'Receivables'[LPP Expected Calc] )
 		```
 		formatString: "#,##0.00"
-		lineageTag: 3240863f-1fb0-42e9-aae5-396e61cd2185
+		lineageTag: a5f5bc65-ffd7-4194-a438-ab24948e5a9c
 		description: "Excel column Z - late payment penalty: 1.18% of Material Value per started week from 22-Aug-2026 to the final-payment receipt date (grace to 24-Aug-2026); accrues to today while unpaid."
 
 	measure "Security Deposit (Expected)" =
@@ -400,7 +400,7 @@ table Receivables
 		SUMX ( 'Receivables', ROUND ( 'Receivables'[Material Value] * 0.25, 0 ) )
 		```
 		formatString: "#,##0"
-		lineageTag: e9821ab5-8a60-4f44-98d6-d74d262744c6
+		lineageTag: 41139464-f788-4331-96ce-db45e6cf78f7
 		description: "Excel column T - ROUND( Material Value * 25%, 0 )."
 
 	measure "Security Deposit (Received)" =
@@ -408,7 +408,7 @@ table Receivables
 		SUM ( 'Receivables'[Security Deposit (Received)] )
 		```
 		formatString: "#,##0"
-		lineageTag: c8e78925-c2dc-4511-9099-eea66a9e6942
+		lineageTag: 29d784ee-7d8b-4157-9ef6-e4bf0f5e6635
 		description: "Excel column U - as entered on the sheet."
 
 	measure "Final Payment (Expected)" =
@@ -419,7 +419,7 @@ table Receivables
 		)
 		```
 		formatString: "#,##0"
-		lineageTag: ca6e41b0-9d60-4071-9634-8f0a94254d16
+		lineageTag: 9e280ad4-9035-4137-bba6-9405b8a15ce6
 		description: "Excel column W - ROUND( Material Value * 92.65% - GST TDS, 0 )."
 
 	measure "Final Payment (Received)" =
@@ -427,7 +427,7 @@ table Receivables
 		SUM ( 'Receivables'[Final Payment (Received)] )
 		```
 		formatString: "#,##0.00"
-		lineageTag: 2162f9f9-06a6-4996-93a8-684b3fcf9b68
+		lineageTag: 5b358ea3-ca54-4aaa-ab66-d3898ddee429
 		description: "Excel column X - as entered on the sheet."
 
 	measure "LPP Received" =
@@ -435,7 +435,7 @@ table Receivables
 		SUM ( 'Receivables'[LPP Received] )
 		```
 		formatString: "#,##0.00"
-		lineageTag: 056bdda0-6259-4bdc-b6f6-7c083079422c
+		lineageTag: 1b5218a8-70ef-4d62-9b41-78fdb0be20ce
 		description: "Excel column AA - late payment penalty actually received."
 
 	measure "Total Receivables in Cash" =
@@ -451,7 +451,7 @@ table Receivables
 		)
 		```
 		formatString: "#,##0"
-		lineageTag: f90e53c8-cb6d-4a57-b462-08eac955d43c
+		lineageTag: 8dd69a7c-a157-4838-b724-564ba2c060e1
 		description: "Excel column S - ROUND( Material Value * 117.65% - GST TDS + LPP Expected, 0 )."
 
 	measure "Total Received" =
@@ -464,7 +464,7 @@ table Receivables
 		)
 		```
 		formatString: "#,##0.00"
-		lineageTag: b16c9bc6-0532-42f5-afee-0f2b804d7515
+		lineageTag: 6e2eb056-adaf-42d4-8f12-b92f0bfe0e28
 		description: "Excel column AC - Security Deposit (Received) + Final Payment (Received) + LPP Received."
 
 	measure "Outstanding" =
@@ -472,7 +472,7 @@ table Receivables
 		[Total Receivables in Cash] - [Total Received]
 		```
 		formatString: "#,##0.00"
-		lineageTag: ed34600a-783e-4f26-bce9-c61c3b588681
+		lineageTag: e1226448-b6b6-4100-aee4-75a975b19997
 		description: "Excel column AD - Total Receivables in Cash - Total Received."
 
 	measure "Recovery %" =
@@ -480,7 +480,7 @@ table Receivables
 		DIVIDE ( [Total Received], [Total Receivables in Cash] )
 		```
 		formatString: "0.0%"
-		lineageTag: 101989ea-cd43-4a10-8e14-39bb25ad124e
+		lineageTag: 234c7e40-0097-4b29-bfa7-eb1f79f5ace7
 		description: "Total Received as a percentage of Total Receivables in Cash."
 
 	measure "Lots Settled" =
@@ -488,7 +488,7 @@ table Receivables
 		COUNTROWS ( FILTER ( 'Receivables', 'Receivables'[Outstanding Calc] <= 5 ) )
 		```
 		formatString: "#,##0"
-		lineageTag: d9ef92c2-cb05-4bd9-b1ad-be572e85b131
+		lineageTag: 08e150e5-3a5c-4862-85d2-0a8f107af1aa
 		description: "Excel column AE - lots whose Outstanding is 5 or less."
 
 	measure "Lots Outstanding" =
@@ -496,7 +496,7 @@ table Receivables
 		COUNTROWS ( FILTER ( 'Receivables', 'Receivables'[Outstanding Calc] > 5 ) )
 		```
 		formatString: "#,##0"
-		lineageTag: 225117c0-566a-4472-a395-65cecd6a7195
+		lineageTag: 9d47f07e-13a5-4404-a355-4d14c6683566
 		description: "Excel column AE - lots whose Outstanding is above 5."
 
 	measure "Lots Missing Invoice Details" =
@@ -511,7 +511,7 @@ table Receivables
 		)
 		```
 		formatString: "#,##0"
-		lineageTag: c34019ac-cc6b-479c-9e6a-ce94870104df
+		lineageTag: bb81c2b3-4a35-4d3c-906e-e78337a62ca7
 		description: "Lots with no Invoice No., SAP Document or Invoice Date."
 
 	measure "Over-Receipts" =
@@ -519,7 +519,7 @@ table Receivables
 		SUMX ( FILTER ( 'Receivables', 'Receivables'[Outstanding Calc] < 0 ), - 'Receivables'[Outstanding Calc] )
 		```
 		formatString: "#,##0.00"
-		lineageTag: 0067ff5e-2e39-4f10-80da-23d6de67782b
+		lineageTag: e0b2e203-613a-4735-903b-fe270aa0886b
 		description: "Received in excess of Total Receivables in Cash (negative Outstanding)."
 
 	measure "Lots Without FP Receipt Date" =
@@ -527,7 +527,7 @@ table Receivables
 		COUNTROWS ( FILTER ( 'Receivables', ISBLANK ( 'Receivables'[FP Receipt Date] ) ) )
 		```
 		formatString: "#,##0"
-		lineageTag: b9e99679-6115-4485-b23e-df737784cacd
+		lineageTag: c6e1f295-9126-467e-80d3-75e18f1b3ae3
 		description: "Lots with no final-payment receipt date entered."
 
 	measure "Lots With Zero GST TDS Rate" =
@@ -535,5 +535,5 @@ table Receivables
 		COUNTROWS ( FILTER ( 'Receivables', 'Receivables'[GST TDS Rate] = 0 ) )
 		```
 		formatString: "#,##0"
-		lineageTag: 35ec88f9-3c79-40de-a898-028686f5f916
+		lineageTag: b11ee027-8a88-43e4-ab36-8ef1c40f8050
 		description: "Lots where the GST TDS Rate is 0."
