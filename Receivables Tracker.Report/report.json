@@ -1,0 +1,329 @@
+{
+  "$schema": "http://powerbi.com/product/schema/report",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY24SU06",
+      "version": "5.41",
+      "type": 2
+    }
+  },
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "name": "SharedResources",
+        "type": 2,
+        "items": [
+          {
+            "name": "CY24SU06",
+            "path": "BaseThemes/CY24SU06.json",
+            "type": 202
+          }
+        ]
+      }
+    }
+  ],
+  "sections": [
+    {
+      "displayName": "Overview",
+      "name": "pOverview",
+      "ordinal": 0,
+      "width": 1280,
+      "height": 800,
+      "displayOption": 0,
+      "config": "{\"relationships\":[]}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1000,
+          "width": 232,
+          "height": 140,
+          "name": "vCardLots",
+          "config": "{\"name\":\"vCardLots\",\"singleVisual\":{\"visualType\":\"card\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Lot Count\"},\"Name\":\"Receivables.Lot Count\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 242,
+          "y": 0,
+          "z": 1001,
+          "width": 232,
+          "height": 140,
+          "name": "vCardMatValue",
+          "config": "{\"name\":\"vCardMatValue\",\"singleVisual\":{\"visualType\":\"card\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Material Value\"},\"Name\":\"Receivables.Material Value\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 484,
+          "y": 0,
+          "z": 1002,
+          "width": 232,
+          "height": 140,
+          "name": "vCardReceivable",
+          "config": "{\"name\":\"vCardReceivable\",\"singleVisual\":{\"visualType\":\"card\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Total Receivables in Cash\"},\"Name\":\"Receivables.Total Receivables in Cash\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 726,
+          "y": 0,
+          "z": 1003,
+          "width": 232,
+          "height": 140,
+          "name": "vCardReceived",
+          "config": "{\"name\":\"vCardReceived\",\"singleVisual\":{\"visualType\":\"card\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Total Received\"},\"Name\":\"Receivables.Total Received\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 968,
+          "y": 0,
+          "z": 1004,
+          "width": 232,
+          "height": 140,
+          "name": "vCardOutstanding",
+          "config": "{\"name\":\"vCardOutstanding\",\"singleVisual\":{\"visualType\":\"card\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Outstanding\"},\"Name\":\"Receivables.Outstanding\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 0,
+          "y": 150,
+          "z": 1005,
+          "width": 470,
+          "height": 330,
+          "name": "vStatusPie",
+          "config": "{\"name\":\"vStatusPie\",\"singleVisual\":{\"visualType\":\"pieChart\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Payment Status\"},\"Name\":\"Receivables.Payment Status\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Total Receivables in Cash\"},\"Name\":\"Receivables.Total Receivables in Cash\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 482,
+          "y": 150,
+          "z": 1006,
+          "width": 718,
+          "height": 330,
+          "name": "vComposition",
+          "config": "{\"name\":\"vComposition\",\"singleVisual\":{\"visualType\":\"barChart\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Payment Status\"},\"Name\":\"Receivables.Payment Status\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Security Deposit (Received)\"},\"Name\":\"Receivables.Security Deposit (Received)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Final Payment (Received)\"},\"Name\":\"Receivables.Final Payment (Received)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"LPP Received\"},\"Name\":\"Receivables.LPP Received\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 0,
+          "y": 492,
+          "z": 1007,
+          "width": 1200,
+          "height": 296,
+          "name": "vBuyerBar",
+          "config": "{\"name\":\"vBuyerBar\",\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Buyer\",\"Type\":0},{\"Name\":\"e1\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Buyer\"},\"Name\":\"Buyer.Buyer\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e1\"}},\"Property\":\"Outstanding\"},\"Name\":\"Receivables.Outstanding\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        }
+      ]
+    },
+    {
+      "displayName": "Receivables Build-Up",
+      "name": "pReceivables",
+      "ordinal": 1,
+      "width": 1280,
+      "height": 800,
+      "displayOption": 0,
+      "config": "{\"relationships\":[]}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1100,
+          "width": 1200,
+          "height": 440,
+          "name": "vStack",
+          "config": "{\"name\":\"vStack\",\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Payment Status\"},\"Name\":\"Receivables.Payment Status\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Material Value\"},\"Name\":\"Receivables.Material Value\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"GST\"},\"Name\":\"Receivables.GST\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"TCS\"},\"Name\":\"Receivables.TCS\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"GST TDS\"},\"Name\":\"Receivables.GST TDS\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Service Charge to MSTC (Net)\"},\"Name\":\"Receivables.Service Charge to MSTC (Net)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"LPP Expected\"},\"Name\":\"Receivables.LPP Expected\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 0,
+          "y": 452,
+          "z": 1101,
+          "width": 1200,
+          "height": 336,
+          "name": "vKpiTable",
+          "config": "{\"name\":\"vKpiTable\",\"singleVisual\":{\"visualType\":\"tableEx\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Material Value\"},\"Name\":\"Receivables.Material Value\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Material Value incl. GST\"},\"Name\":\"Receivables.Material Value incl. GST\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"TCS\"},\"Name\":\"Receivables.TCS\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"TDS u/s 194(O)\"},\"Name\":\"Receivables.TDS u/s 194(O)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Service Charge to MSTC\"},\"Name\":\"Receivables.Service Charge to MSTC\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"TDS u/s 194(H)\"},\"Name\":\"Receivables.TDS u/s 194(H)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Net Service Charge\"},\"Name\":\"Receivables.Net Service Charge\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Service Charge to MSTC (Net)\"},\"Name\":\"Receivables.Service Charge to MSTC (Net)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"GST TDS\"},\"Name\":\"Receivables.GST TDS\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Total Receivables in Cash\"},\"Name\":\"Receivables.Total Receivables in Cash\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        }
+      ]
+    },
+    {
+      "displayName": "Buyer Analysis",
+      "name": "pBuyers",
+      "ordinal": 2,
+      "width": 1280,
+      "height": 800,
+      "displayOption": 0,
+      "config": "{\"relationships\":[]}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1200,
+          "width": 250,
+          "height": 96,
+          "name": "vSlicerStatus",
+          "config": "{\"name\":\"vSlicerStatus\",\"singleVisual\":{\"visualType\":\"slicer\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Payment Status\"},\"Name\":\"Receivables.Payment Status\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 260,
+          "y": 0,
+          "z": 1201,
+          "width": 250,
+          "height": 96,
+          "name": "vSlicerBuyer",
+          "config": "{\"name\":\"vSlicerBuyer\",\"singleVisual\":{\"visualType\":\"slicer\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Buyer\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Buyer\"},\"Name\":\"Buyer.Buyer\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 520,
+          "y": 0,
+          "z": 1202,
+          "width": 190,
+          "height": 96,
+          "name": "vSlicerUnit",
+          "config": "{\"name\":\"vSlicerUnit\",\"singleVisual\":{\"visualType\":\"slicer\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Unit\"},\"Name\":\"Receivables.Unit\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 720,
+          "y": 0,
+          "z": 1203,
+          "width": 240,
+          "height": 96,
+          "name": "vSlicerMonth",
+          "config": "{\"name\":\"vSlicerMonth\",\"singleVisual\":{\"visualType\":\"slicer\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receipt Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Month\"},\"Name\":\"Receipt Date.Month\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 0,
+          "y": 108,
+          "z": 1204,
+          "width": 1200,
+          "height": 680,
+          "name": "vBuyerMatrix",
+          "config": "{\"name\":\"vBuyerMatrix\",\"singleVisual\":{\"visualType\":\"pivotTable\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Buyer\",\"Type\":0},{\"Name\":\"e1\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Buyer\"},\"Name\":\"Buyer.Buyer\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e1\"}},\"Property\":\"Lot Count\"},\"Name\":\"Receivables.Lot Count\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e1\"}},\"Property\":\"Material Value\"},\"Name\":\"Receivables.Material Value\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e1\"}},\"Property\":\"Total Receivables in Cash\"},\"Name\":\"Receivables.Total Receivables in Cash\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e1\"}},\"Property\":\"Total Received\"},\"Name\":\"Receivables.Total Received\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e1\"}},\"Property\":\"Outstanding\"},\"Name\":\"Receivables.Outstanding\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e1\"}},\"Property\":\"Recovery %\"},\"Name\":\"Receivables.Recovery %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        }
+      ]
+    },
+    {
+      "displayName": "Lot Register",
+      "name": "pRegister",
+      "ordinal": 3,
+      "width": 1280,
+      "height": 800,
+      "displayOption": 0,
+      "config": "{\"relationships\":[]}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1300,
+          "width": 250,
+          "height": 96,
+          "name": "vRegSlicerStatus",
+          "config": "{\"name\":\"vRegSlicerStatus\",\"singleVisual\":{\"visualType\":\"slicer\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Payment Status\"},\"Name\":\"Receivables.Payment Status\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 260,
+          "y": 0,
+          "z": 1301,
+          "width": 250,
+          "height": 96,
+          "name": "vRegSlicerBuyer",
+          "config": "{\"name\":\"vRegSlicerBuyer\",\"singleVisual\":{\"visualType\":\"slicer\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Buyer\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Buyer\"},\"Name\":\"Buyer.Buyer\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 0,
+          "y": 108,
+          "z": 1302,
+          "width": 1200,
+          "height": 680,
+          "name": "vRegister",
+          "config": "{\"name\":\"vRegister\",\"singleVisual\":{\"visualType\":\"tableEx\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Lot No.\"},\"Name\":\"Receivables.Lot No.\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Bid Sheet\"},\"Name\":\"Receivables.Bid Sheet\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Lot Name\"},\"Name\":\"Receivables.Lot Name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Buyer\"},\"Name\":\"Receivables.Buyer\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Unit\"},\"Name\":\"Receivables.Unit\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Quantity\"},\"Name\":\"Receivables.Quantity\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Rate\"},\"Name\":\"Receivables.Rate\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Material Value\"},\"Name\":\"Receivables.Material Value\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Security Deposit (Received)\"},\"Name\":\"Receivables.Security Deposit (Received)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Final Payment (Received)\"},\"Name\":\"Receivables.Final Payment (Received)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Payment Status\"},\"Name\":\"Receivables.Payment Status\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Invoice No.\"},\"Name\":\"Receivables.Invoice No.\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"SAP Document\"},\"Name\":\"Receivables.SAP Document\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"GST\"},\"Name\":\"Receivables.GST\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"TCS\"},\"Name\":\"Receivables.TCS\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"GST TDS\"},\"Name\":\"Receivables.GST TDS\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"LPP Expected\"},\"Name\":\"Receivables.LPP Expected\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Total Receivables in Cash\"},\"Name\":\"Receivables.Total Receivables in Cash\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Total Received\"},\"Name\":\"Receivables.Total Received\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Outstanding\"},\"Name\":\"Receivables.Outstanding\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        }
+      ]
+    },
+    {
+      "displayName": "Data Quality",
+      "name": "pDataQuality",
+      "ordinal": 4,
+      "width": 1280,
+      "height": 800,
+      "displayOption": 0,
+      "config": "{\"relationships\":[]}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1400,
+          "width": 290,
+          "height": 140,
+          "name": "vDqMissing",
+          "config": "{\"name\":\"vDqMissing\",\"singleVisual\":{\"visualType\":\"card\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Lots Missing Invoice Details\"},\"Name\":\"Receivables.Lots Missing Invoice Details\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 300,
+          "y": 0,
+          "z": 1401,
+          "width": 290,
+          "height": 140,
+          "name": "vDqOutstanding",
+          "config": "{\"name\":\"vDqOutstanding\",\"singleVisual\":{\"visualType\":\"card\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Lots Outstanding\"},\"Name\":\"Receivables.Lots Outstanding\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 600,
+          "y": 0,
+          "z": 1402,
+          "width": 290,
+          "height": 140,
+          "name": "vDqOver",
+          "config": "{\"name\":\"vDqOver\",\"singleVisual\":{\"visualType\":\"card\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Over-Receipts\"},\"Name\":\"Receivables.Over-Receipts\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 900,
+          "y": 0,
+          "z": 1403,
+          "width": 300,
+          "height": 140,
+          "name": "vDqRecovery",
+          "config": "{\"name\":\"vDqRecovery\",\"singleVisual\":{\"visualType\":\"card\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Recovery %\"},\"Name\":\"Receivables.Recovery %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 0,
+          "y": 152,
+          "z": 1404,
+          "width": 1200,
+          "height": 300,
+          "name": "vDqTable",
+          "config": "{\"name\":\"vDqTable\",\"singleVisual\":{\"visualType\":\"tableEx\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Lot No.\"},\"Name\":\"Receivables.Lot No.\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Bid Sheet\"},\"Name\":\"Receivables.Bid Sheet\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Buyer\"},\"Name\":\"Receivables.Buyer\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Invoice No.\"},\"Name\":\"Receivables.Invoice No.\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"SAP Document\"},\"Name\":\"Receivables.SAP Document\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Invoice Date\"},\"Name\":\"Receivables.Invoice Date\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Payment Status (Sheet)\"},\"Name\":\"Receivables.Payment Status (Sheet)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Total Receivables in Cash\"},\"Name\":\"Receivables.Total Receivables in Cash\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Total Received\"},\"Name\":\"Receivables.Total Received\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Outstanding\"},\"Name\":\"Receivables.Outstanding\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        },
+        {
+          "x": 0,
+          "y": 464,
+          "z": 1405,
+          "width": 1200,
+          "height": 324,
+          "name": "vDqMonth",
+          "config": "{\"name\":\"vDqMonth\",\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e0\",\"Entity\":\"Receipt Date\",\"Type\":0},{\"Name\":\"e1\",\"Entity\":\"Receivables\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e0\"}},\"Property\":\"Month\"},\"Name\":\"Receipt Date.Month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e1\"}},\"Property\":\"Total Receivables in Cash\"},\"Name\":\"Receivables.Total Receivables in Cash\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e1\"}},\"Property\":\"Total Received\"},\"Name\":\"Receivables.Total Received\"}]},\"drillFilterOtherVisuals\":true}}",
+          "dataTransforms": "{}"
+        }
+      ]
+    }
+  ],
+  "config": "{\"version\":\"5.41\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU06\",\"version\":\"5.41\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"exportDataMode\":1},\"objects\":{}}",
+  "layoutOptimization": 0
+}

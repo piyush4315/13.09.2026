@@ -1,0 +1,26 @@
+table Buyer
+	lineageTag: 4fc909b2-f99b-4cc9-ae81-f81fa06d0ece
+
+	column "Buyer" =
+		```
+		DISTINCT ( 'Receivables'[Buyer] )
+		```
+		dataType: string
+		isDataTypeInferred
+		lineageTag: df496ff5-db1f-4683-8708-3b1e795188cb
+		summarizeBy: none
+		description: "Distinct buyers, derived from the receivables rows."
+
+	measure "Buyer Lots" =
+		```
+		CALCULATE ( [Lot Count] )
+		```
+		formatString: "#,##0"
+		lineageTag: 98cde87a-f64a-43cc-8d0d-a0cef39937eb
+
+	measure "Buyer Outstanding" =
+		```
+		CALCULATE ( [Outstanding] )
+		```
+		formatString: "#,##0.00"
+		lineageTag: 8f5f9560-f28f-448b-8412-9d67025c6a1f

@@ -1,0 +1,53 @@
+table "Invoice Date"
+	lineageTag: 65b514f7-a90d-467a-a8f7-41a1f3949f21
+
+	column "Date" =
+		```
+		CALENDAR ( DATE ( 2026, 1, 1 ), DATE ( 2027, 12, 31 ) )
+		```
+		dataType: dateTime
+		formatString: "dd/mm/yyyy"
+		isDataTypeInferred
+		isKey
+		lineageTag: 4e257e6d-4dc3-44d9-a104-282b9f1e737a
+		summarizeBy: none
+
+	column "DateKey" =
+		```
+		YEAR ( 'Invoice Date'[Date] ) * 10000 + MONTH ( 'Invoice Date'[Date] ) * 100 + DAY ( 'Invoice Date'[Date] )
+		```
+		dataType: int64
+		formatString: "0"
+		isDataTypeInferred
+		isHidden
+		lineageTag: a5304d18-7e91-4b80-9722-8ba0a5ff476d
+		summarizeBy: none
+
+	column "Month" =
+		```
+		FORMAT ( 'Invoice Date'[Date], "mmm yyyy" )
+		```
+		dataType: string
+		isDataTypeInferred
+		lineageTag: 34c79813-f877-403d-be6e-12198b2ae606
+		sortByColumn: "MonthKey"
+		summarizeBy: none
+
+	column "MonthKey" =
+		```
+		YEAR ( 'Invoice Date'[Date] ) * 100 + MONTH ( 'Invoice Date'[Date] )
+		```
+		dataType: int64
+		formatString: "0"
+		isDataTypeInferred
+		isHidden
+		lineageTag: 8ace14d5-6224-456a-ab06-502949252516
+		summarizeBy: none
+
+	measure "Day Count" =
+		```
+		COUNTROWS ( 'Invoice Date' )
+		```
+		formatString: "#,##0"
+		isHidden
+		lineageTag: f7b1abc8-2802-4c3a-b4e6-876cccd4665f

@@ -1,0 +1,53 @@
+table "Receipt Date"
+	lineageTag: e2e1fa6e-d1b9-4e16-9f6a-4b6f28a47811
+
+	column "Date" =
+		```
+		CALENDAR ( DATE ( 2026, 1, 1 ), DATE ( 2027, 12, 31 ) )
+		```
+		dataType: dateTime
+		formatString: "dd/mm/yyyy"
+		isDataTypeInferred
+		isKey
+		lineageTag: ce399f1d-e488-4aba-ba58-2b97084f179c
+		summarizeBy: none
+
+	column "DateKey" =
+		```
+		YEAR ( 'Receipt Date'[Date] ) * 10000 + MONTH ( 'Receipt Date'[Date] ) * 100 + DAY ( 'Receipt Date'[Date] )
+		```
+		dataType: int64
+		formatString: "0"
+		isDataTypeInferred
+		isHidden
+		lineageTag: 6546e5a7-d23f-44f0-ab27-344f76ed096b
+		summarizeBy: none
+
+	column "Month" =
+		```
+		FORMAT ( 'Receipt Date'[Date], "mmm yyyy" )
+		```
+		dataType: string
+		isDataTypeInferred
+		lineageTag: f60c6c48-34f3-45ef-a1ac-51001174421a
+		sortByColumn: "MonthKey"
+		summarizeBy: none
+
+	column "MonthKey" =
+		```
+		YEAR ( 'Receipt Date'[Date] ) * 100 + MONTH ( 'Receipt Date'[Date] )
+		```
+		dataType: int64
+		formatString: "0"
+		isDataTypeInferred
+		isHidden
+		lineageTag: 2350e5ed-3de2-4e67-8d7f-a6d0e8627869
+		summarizeBy: none
+
+	measure "Day Count" =
+		```
+		COUNTROWS ( 'Receipt Date' )
+		```
+		formatString: "#,##0"
+		isHidden
+		lineageTag: 3187893d-a1b8-445d-b262-2493a555705c

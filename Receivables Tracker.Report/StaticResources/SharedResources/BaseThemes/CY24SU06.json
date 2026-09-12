@@ -1,0 +1,45 @@
+{
+  "name": "CY24SU06",
+  "dataColors": [
+    "#118DFF",
+    "#12239E",
+    "#E66C37",
+    "#6B007B",
+    "#E044A7",
+    "#744EC2",
+    "#D9B300",
+    "#D64550"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#252423",
+  "tableAccent": "#118DFF",
+  "good": "#1A9613",
+  "neutral": "#D9B300",
+  "bad": "#D64550",
+  "maximum": "#118DFF",
+  "center": "#D9B300",
+  "minimum": "#E044A7",
+  "null": "#A6A6A6",
+  "textClasses": {
+    "callout": {
+      "fontSize": 45,
+      "fontFace": "DIN",
+      "color": "#252423"
+    },
+    "title": {
+      "fontSize": 12,
+      "fontFace": "DIN",
+      "color": "#252423"
+    },
+    "header": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#252423"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI",
+      "color": "#252423"
+    }
+  }
+}

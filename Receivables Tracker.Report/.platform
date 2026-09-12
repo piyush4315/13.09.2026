@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Receivables Tracker"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8e10473a-a13f-4963-9ddc-c39bc0057628"
+  }
+}

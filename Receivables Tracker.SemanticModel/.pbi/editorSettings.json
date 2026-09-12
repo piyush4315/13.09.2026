@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "showHiddenFields": true,
+  "autodetectRelationships": false,
+  "parallelQueryLoading": true,
+  "typeDetectionEnabled": true,
+  "relationshipImportEnabled": false,
+  "relationshipRefreshEnabled": false,
+  "runBackgroundAnalysis": true
+}

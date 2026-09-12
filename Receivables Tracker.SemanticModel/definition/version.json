@@ -1,0 +1,9 @@
+{
+  "version": "3.0",
+  "compatibilityLevel": 1567,
+  "dataAccessOptions": {
+    "legacyRedirects": true,
+    "returnErrorValuesAsNull": true
+  },
+  "defaultPowerBIDataSourceVersion": "powerBI_V3"
+}

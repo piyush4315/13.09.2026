@@ -1,0 +1,539 @@
+table Receivables
+	lineageTag: 8bf42664-cc7a-4ca7-94c7-4f6ce6c2a6a1
+
+	partition Receivables
+		mode: import
+		source =
+		```
+		Receivables
+		```
+
+	column "Quantity"
+		dataType: double
+		formatString: "#,##0.###"
+		lineageTag: 2eb2002e-da9c-4674-a845-0435588bdd6d
+		summarizeBy: sum
+		description: "Excel column A of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "Quantity"
+
+	column "Lot Name"
+		dataType: string
+		lineageTag: b0f7a5aa-b9c2-4909-b201-180ceb5309b9
+		summarizeBy: none
+		description: "Excel column B of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "Lot Name"
+
+	column "Rate"
+		dataType: double
+		formatString: "#,##0.##"
+		lineageTag: 650e8f2d-fa21-4880-aa3e-1c6d992907d8
+		summarizeBy: sum
+		description: "Excel column C of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "Rate"
+
+	column "Bid Sheet"
+		dataType: int64
+		formatString: "0"
+		lineageTag: 18e4b1e9-ff6e-4221-9bb9-bd1c6d42db42
+		summarizeBy: none
+		description: "Excel column D of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "Bid Sheet"
+
+	column "Unit"
+		dataType: string
+		lineageTag: 3016c268-06a5-4f3a-9b06-3fb5bbff2ac2
+		summarizeBy: none
+		description: "Excel column E of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "Unit"
+
+	column "Lot No."
+		dataType: int64
+		formatString: "0"
+		lineageTag: 00c875c8-7664-43a2-83df-9dccad54e5d6
+		summarizeBy: none
+		description: "Excel column F of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "Lot No."
+
+	column "Buyer"
+		dataType: string
+		lineageTag: df29226a-110d-40e8-a89f-83dd62dfe803
+		summarizeBy: none
+		description: "Excel column G of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "Buyer"
+
+	column "Material Value"
+		dataType: int64
+		formatString: "#,##0"
+		lineageTag: eb40213b-991a-4153-bc72-dc42b35f9a35
+		summarizeBy: sum
+		description: "Excel column H of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "Material Value"
+
+	column "GST TDS Rate"
+		dataType: double
+		formatString: "0.00%"
+		lineageTag: b6c33d3a-f255-41a8-abc4-1c5819efcce3
+		summarizeBy: none
+		description: "Excel column Q of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "GST TDS Rate"
+
+	column "Security Deposit (Received)"
+		dataType: double
+		formatString: "#,##0"
+		lineageTag: 927b386c-4d1f-4498-8070-ddeef648511a
+		summarizeBy: sum
+		description: "Excel column U of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "Security Deposit (Received)"
+
+	column "SD Receipt Date (Text)"
+		dataType: string
+		lineageTag: 36d12db8-c20e-4f26-8028-77511940513b
+		summarizeBy: none
+		description: "Excel column V of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "SD Receipt Date (Text)"
+
+	column "Final Payment (Received)"
+		dataType: double
+		formatString: "#,##0.00"
+		lineageTag: 8f9a5d9a-c0da-4b3b-9899-48e03aa8143f
+		summarizeBy: sum
+		description: "Excel column X of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "Final Payment (Received)"
+
+	column "FP Receipt Date (Text)"
+		dataType: string
+		lineageTag: 7adb4daa-296c-4dae-8d40-9d231bb3baf6
+		summarizeBy: none
+		description: "Excel column Y of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "FP Receipt Date (Text)"
+
+	column "LPP Received"
+		dataType: double
+		formatString: "#,##0.00"
+		lineageTag: 76b9e080-30e3-46cc-b81b-707520b199bc
+		summarizeBy: sum
+		description: "Excel column AA of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "LPP Received"
+
+	column "LPP Receipt Date (Text)"
+		dataType: string
+		lineageTag: 4da6bd13-262e-4e94-88a3-39caa7b300fb
+		summarizeBy: none
+		description: "Excel column AB of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "LPP Receipt Date (Text)"
+
+	column "Payment Status (Sheet)"
+		dataType: string
+		lineageTag: d692521d-703d-42e7-9c21-3431fbe82601
+		summarizeBy: none
+		description: "Excel column AE of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "Payment Status (Sheet)"
+
+	column "Invoice No."
+		dataType: string
+		lineageTag: 5bdd8b6a-eb48-4802-a8ea-5de494f07ac9
+		summarizeBy: none
+		description: "Excel column AF of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "Invoice No."
+
+	column "SAP Document"
+		dataType: string
+		lineageTag: 17bac3cc-11f7-4e0d-97a7-6b1cf0353669
+		summarizeBy: none
+		description: "Excel column AG of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "SAP Document"
+
+	column "Invoice Date (Text)"
+		dataType: string
+		lineageTag: a47aa495-04e7-46f4-8109-3cf4b8e38dac
+		summarizeBy: none
+		description: "Excel column AH of 'Final Calculation Sheet'."
+		annotations
+			annotation PBI_SourceColumn = "Invoice Date (Text)"
+
+	column "SD Receipt Date" =
+		```
+		VAR _t = TRIM ( 'Receivables'[SD Receipt Date (Text)] )
+		RETURN
+			IF (
+				ISBLANK ( _t ) || _t = "0" || LEN ( _t ) <> 10,
+				BLANK (),
+				DATE ( VALUE ( MID ( _t, 7, 4 ) ), VALUE ( MID ( _t, 4, 2 ) ), VALUE ( LEFT ( _t, 2 ) ) )
+			)
+		```
+		dataType: dateTime
+		formatString: "dd/mm/yyyy"
+		isDataTypeInferred
+		lineageTag: 13050c4e-0d60-43a7-9573-fa4c17890ed4
+		summarizeBy: none
+		description: "True date parsed from 'SD Receipt Date (Text)' (dd.mm.yyyy on the sheet)."
+
+	column "FP Receipt Date" =
+		```
+		VAR _t = TRIM ( 'Receivables'[FP Receipt Date (Text)] )
+		RETURN
+			IF (
+				ISBLANK ( _t ) || _t = "0" || LEN ( _t ) <> 10,
+				BLANK (),
+				DATE ( VALUE ( MID ( _t, 7, 4 ) ), VALUE ( MID ( _t, 4, 2 ) ), VALUE ( LEFT ( _t, 2 ) ) )
+			)
+		```
+		dataType: dateTime
+		formatString: "dd/mm/yyyy"
+		isDataTypeInferred
+		lineageTag: fdc1a257-1c71-4994-91f3-e5b132923fa0
+		summarizeBy: none
+		description: "True date parsed from 'FP Receipt Date (Text)'."
+
+	column "LPP Receipt Date" =
+		```
+		VAR _t = TRIM ( 'Receivables'[LPP Receipt Date (Text)] )
+		RETURN
+			IF (
+				ISBLANK ( _t ) || _t = "0" || LEN ( _t ) <> 10,
+				BLANK (),
+				DATE ( VALUE ( MID ( _t, 7, 4 ) ), VALUE ( MID ( _t, 4, 2 ) ), VALUE ( LEFT ( _t, 2 ) ) )
+			)
+		```
+		dataType: dateTime
+		formatString: "dd/mm/yyyy"
+		isDataTypeInferred
+		lineageTag: d0bbc032-6d7d-4439-8e67-e41c15662768
+		summarizeBy: none
+		description: "True date parsed from 'LPP Receipt Date (Text)'."
+
+	column "Invoice Date" =
+		```
+		VAR _t = TRIM ( 'Receivables'[Invoice Date (Text)] )
+		RETURN
+			IF (
+				ISBLANK ( _t ) || _t = "0" || LEN ( _t ) <> 10,
+				BLANK (),
+				DATE ( VALUE ( MID ( _t, 7, 4 ) ), VALUE ( MID ( _t, 4, 2 ) ), VALUE ( LEFT ( _t, 2 ) ) )
+			)
+		```
+		dataType: dateTime
+		formatString: "dd/mm/yyyy"
+		isDataTypeInferred
+		lineageTag: d6c67147-67a6-4eac-9ee1-560ea7da268d
+		summarizeBy: none
+		description: "True date parsed from 'Invoice Date (Text)' (Excel column AH)."
+
+	column "LPP Expected Calc" =
+		```
+		VAR _LPPStart = DATE ( 2026, 8, 22 )
+		VAR _Grace = DATE ( 2026, 8, 24 )
+		VAR _Received = 'Receivables'[FP Receipt Date]
+		VAR _End = IF ( ISBLANK ( _Received ), TODAY (), _Received )
+		VAR _Weeks = CEILING ( DIVIDE ( DATEDIFF ( _LPPStart, _End, DAY ), 7 ), 1 )
+		RETURN
+			IF (
+				NOT ISBLANK ( _Received ) && _Received <= _Grace,
+				0,
+				'Receivables'[Material Value] * 0.0118 * _Weeks
+			)
+		```
+		dataType: double
+		formatString: "#,##0.00"
+		isDataTypeInferred
+		isHidden
+		lineageTag: 4e67cdc4-3a1e-4a86-b63b-8025479a7c99
+		summarizeBy: sum
+		description: "Row-level late payment penalty. Hidden - consumed by [Outstanding Calc]."
+
+	column "Outstanding Calc" =
+		```
+		VAR _MatValue = 'Receivables'[Material Value]
+		VAR _GstTds = ROUND ( _MatValue * 'Receivables'[GST TDS Rate], 0 )
+		VAR _Lpp = 'Receivables'[LPP Expected Calc]
+		VAR _Receivable = ROUND ( _MatValue * 1.1765 - _GstTds + _Lpp, 0 )
+		VAR _Received =
+			COALESCE ( 'Receivables'[Security Deposit (Received)], 0 )
+				+ COALESCE ( 'Receivables'[Final Payment (Received)], 0 )
+				+ COALESCE ( 'Receivables'[LPP Received], 0 )
+		RETURN
+			_Receivable - _Received
+		```
+		dataType: double
+		formatString: "#,##0.00"
+		isDataTypeInferred
+		isHidden
+		lineageTag: c7f2c814-7ed6-4c9d-9b44-a91dd3380225
+		summarizeBy: sum
+		description: "Row-level outstanding amount. Hidden - consumed by the payment-status measures."
+
+	column "Payment Status" =
+		```
+		IF ( 'Receivables'[Outstanding Calc] <= 5, "SETTLED", "OUTSTANDING" )
+		```
+		dataType: string
+		isDataTypeInferred
+		lineageTag: 0bafd7eb-6dd8-45c8-85a9-4019d27f2770
+		summarizeBy: none
+		description: "SETTLED when the row-level Outstanding is 5 or less, otherwise OUTSTANDING. Recomputed from the inputs; mirrors Excel column AE. Compare with [Payment Status (Sheet)] to spot rows the spreadsheet has not recalculated."
+
+	measure "Lot Count" =
+		```
+		COUNTROWS ( 'Receivables' )
+		```
+		formatString: "#,##0"
+		lineageTag: b36ca4ed-a8ce-4514-a1dc-e4c4a5ca713b
+		description: "Number of lots in the current filter context."
+
+	measure "Material Value" =
+		```
+		SUM ( 'Receivables'[Material Value] )
+		```
+		formatString: "#,##0"
+		lineageTag: 34101dfd-5311-4fca-a9d9-7e4f73268375
+		description: "Excel column H - auction material value before tax."
+
+	measure "GST" =
+		```
+		SUMX ( 'Receivables', ROUND ( 'Receivables'[Material Value] * 0.18, 0 ) )
+		```
+		formatString: "#,##0"
+		lineageTag: a254c4f3-7209-4511-9299-56716967fd19
+		description: "Excel column I - ROUND( Material Value * 18%, 0 )."
+
+	measure "Material Value incl. GST" =
+		```
+		SUMX (
+			'Receivables',
+			'Receivables'[Material Value] + ROUND ( 'Receivables'[Material Value] * 0.18, 0 )
+		)
+		```
+		formatString: "#,##0"
+		lineageTag: 193b988d-9067-4ad6-a0e2-e0712c21c7ec
+		description: "Excel column J - Material Value + GST."
+
+	measure "TCS" =
+		```
+		SUMX (
+			'Receivables',
+			ROUND ( ( 'Receivables'[Material Value] + ROUND ( 'Receivables'[Material Value] * 0.18, 0 ) ) * 0.02, 0 )
+		)
+		```
+		formatString: "#,##0"
+		lineageTag: 5c8f718a-8709-43b8-9c99-74f65d047d11
+		description: "Excel column K - ROUND( ( Material Value + GST ) * 2%, 0 )."
+
+	measure "TDS u/s 194(O)" =
+		```
+		SUMX ( 'Receivables', 'Receivables'[Material Value] * 0.001 )
+		```
+		formatString: "#,##0.00"
+		lineageTag: e17c46bc-cab8-49ed-b2e5-2858c155716f
+		description: "Excel column L - Material Value * 0.1% (source is not rounded)."
+
+	measure "Service Charge to MSTC" =
+		```
+		SUMX ( 'Receivables', 'Receivables'[Material Value] * 0.0225 * 1.18 )
+		```
+		formatString: "#,##0.00"
+		lineageTag: 6ba837b7-1194-47a5-9765-9c69cf1413ca
+		description: "Excel column M - Material Value * 2.25% * 118%."
+
+	measure "TDS u/s 194(H)" =
+		```
+		SUMX ( 'Receivables', 'Receivables'[Material Value] * 0.0225 * 0.02 )
+		```
+		formatString: "#,##0.00"
+		lineageTag: 6ae56607-b587-40a5-8094-b1aefcb96d2f
+		description: "Excel column N - Material Value * 2.25% * 2%."
+
+	measure "Net Service Charge" =
+		```
+		SUMX ( 'Receivables', 'Receivables'[Material Value] * 0.0225 * ( 1.18 - 0.02 ) )
+		```
+		formatString: "#,##0.00"
+		lineageTag: 94b2be4c-97cf-4d9f-a213-71f12b3a3d5c
+		description: "Excel column O - Service Charge to MSTC - TDS u/s 194(H)."
+
+	measure "Service Charge to MSTC (Net)" =
+		```
+		SUMX (
+			'Receivables',
+			ROUND ( 'Receivables'[Material Value] * 0.0225 * ( 1.18 - 0.02 ) + 'Receivables'[Material Value] * 0.001, 0 )
+		)
+		```
+		formatString: "#,##0"
+		lineageTag: 805cb41f-fa29-4a48-87c0-7957d5ce2934
+		description: "Excel column P - ROUND( Net Service Charge + TDS u/s 194(O), 0 )."
+
+	measure "GST TDS" =
+		```
+		SUMX ( 'Receivables', ROUND ( 'Receivables'[Material Value] * 'Receivables'[GST TDS Rate], 0 ) )
+		```
+		formatString: "#,##0"
+		lineageTag: 477110f6-64e2-4c8b-bbf0-f72d1c207725
+		description: "Excel column R - ROUND( Material Value * GST TDS Rate, 0 )."
+
+	measure "LPP Expected" =
+		```
+		SUMX ( 'Receivables', 'Receivables'[LPP Expected Calc] )
+		```
+		formatString: "#,##0.00"
+		lineageTag: 3240863f-1fb0-42e9-aae5-396e61cd2185
+		description: "Excel column Z - late payment penalty: 1.18% of Material Value per started week from 22-Aug-2026 to the final-payment receipt date (grace to 24-Aug-2026); accrues to today while unpaid."
+
+	measure "Security Deposit (Expected)" =
+		```
+		SUMX ( 'Receivables', ROUND ( 'Receivables'[Material Value] * 0.25, 0 ) )
+		```
+		formatString: "#,##0"
+		lineageTag: e9821ab5-8a60-4f44-98d6-d74d262744c6
+		description: "Excel column T - ROUND( Material Value * 25%, 0 )."
+
+	measure "Security Deposit (Received)" =
+		```
+		SUM ( 'Receivables'[Security Deposit (Received)] )
+		```
+		formatString: "#,##0"
+		lineageTag: c8e78925-c2dc-4511-9099-eea66a9e6942
+		description: "Excel column U - as entered on the sheet."
+
+	measure "Final Payment (Expected)" =
+		```
+		SUMX (
+			'Receivables',
+			ROUND ( 'Receivables'[Material Value] * 0.9265 - ROUND ( 'Receivables'[Material Value] * 'Receivables'[GST TDS Rate], 0 ), 0 )
+		)
+		```
+		formatString: "#,##0"
+		lineageTag: ca6e41b0-9d60-4071-9634-8f0a94254d16
+		description: "Excel column W - ROUND( Material Value * 92.65% - GST TDS, 0 )."
+
+	measure "Final Payment (Received)" =
+		```
+		SUM ( 'Receivables'[Final Payment (Received)] )
+		```
+		formatString: "#,##0.00"
+		lineageTag: 2162f9f9-06a6-4996-93a8-684b3fcf9b68
+		description: "Excel column X - as entered on the sheet."
+
+	measure "LPP Received" =
+		```
+		SUM ( 'Receivables'[LPP Received] )
+		```
+		formatString: "#,##0.00"
+		lineageTag: 056bdda0-6259-4bdc-b6f6-7c083079422c
+		description: "Excel column AA - late payment penalty actually received."
+
+	measure "Total Receivables in Cash" =
+		```
+		SUMX (
+			'Receivables',
+			ROUND (
+				'Receivables'[Material Value] * 1.1765
+					- ROUND ( 'Receivables'[Material Value] * 'Receivables'[GST TDS Rate], 0 )
+					+ 'Receivables'[LPP Expected Calc],
+				0
+			)
+		)
+		```
+		formatString: "#,##0"
+		lineageTag: f90e53c8-cb6d-4a57-b462-08eac955d43c
+		description: "Excel column S - ROUND( Material Value * 117.65% - GST TDS + LPP Expected, 0 )."
+
+	measure "Total Received" =
+		```
+		SUMX (
+			'Receivables',
+			COALESCE ( 'Receivables'[Security Deposit (Received)], 0 )
+				+ COALESCE ( 'Receivables'[Final Payment (Received)], 0 )
+				+ COALESCE ( 'Receivables'[LPP Received], 0 )
+		)
+		```
+		formatString: "#,##0.00"
+		lineageTag: b16c9bc6-0532-42f5-afee-0f2b804d7515
+		description: "Excel column AC - Security Deposit (Received) + Final Payment (Received) + LPP Received."
+
+	measure "Outstanding" =
+		```
+		[Total Receivables in Cash] - [Total Received]
+		```
+		formatString: "#,##0.00"
+		lineageTag: ed34600a-783e-4f26-bce9-c61c3b588681
+		description: "Excel column AD - Total Receivables in Cash - Total Received."
+
+	measure "Recovery %" =
+		```
+		DIVIDE ( [Total Received], [Total Receivables in Cash] )
+		```
+		formatString: "0.0%"
+		lineageTag: 101989ea-cd43-4a10-8e14-39bb25ad124e
+		description: "Total Received as a percentage of Total Receivables in Cash."
+
+	measure "Lots Settled" =
+		```
+		COUNTROWS ( FILTER ( 'Receivables', 'Receivables'[Outstanding Calc] <= 5 ) )
+		```
+		formatString: "#,##0"
+		lineageTag: d9ef92c2-cb05-4bd9-b1ad-be572e85b131
+		description: "Excel column AE - lots whose Outstanding is 5 or less."
+
+	measure "Lots Outstanding" =
+		```
+		COUNTROWS ( FILTER ( 'Receivables', 'Receivables'[Outstanding Calc] > 5 ) )
+		```
+		formatString: "#,##0"
+		lineageTag: 225117c0-566a-4472-a395-65cecd6a7195
+		description: "Excel column AE - lots whose Outstanding is above 5."
+
+	measure "Lots Missing Invoice Details" =
+		```
+		COUNTROWS (
+			FILTER (
+				'Receivables',
+				ISBLANK ( 'Receivables'[Invoice No.] )
+					|| ISBLANK ( 'Receivables'[SAP Document] )
+					|| ISBLANK ( 'Receivables'[Invoice Date] )
+			)
+		)
+		```
+		formatString: "#,##0"
+		lineageTag: c34019ac-cc6b-479c-9e6a-ce94870104df
+		description: "Lots with no Invoice No., SAP Document or Invoice Date."
+
+	measure "Over-Receipts" =
+		```
+		SUMX ( FILTER ( 'Receivables', 'Receivables'[Outstanding Calc] < 0 ), - 'Receivables'[Outstanding Calc] )
+		```
+		formatString: "#,##0.00"
+		lineageTag: 0067ff5e-2e39-4f10-80da-23d6de67782b
+		description: "Received in excess of Total Receivables in Cash (negative Outstanding)."
+
+	measure "Lots Without FP Receipt Date" =
+		```
+		COUNTROWS ( FILTER ( 'Receivables', ISBLANK ( 'Receivables'[FP Receipt Date] ) ) )
+		```
+		formatString: "#,##0"
+		lineageTag: b9e99679-6115-4485-b23e-df737784cacd
+		description: "Lots with no final-payment receipt date entered."
+
+	measure "Lots With Zero GST TDS Rate" =
+		```
+		COUNTROWS ( FILTER ( 'Receivables', 'Receivables'[GST TDS Rate] = 0 ) )
+		```
+		formatString: "#,##0"
+		lineageTag: 35ec88f9-3c79-40de-a898-028686f5f916
+		description: "Lots where the GST TDS Rate is 0."
