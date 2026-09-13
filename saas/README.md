@@ -138,13 +138,21 @@ afterwards in `mount()`.
 ## Verification
 
 ```
-$ npm test
+$ npm run check
 # tests 46
 # pass 46
 # fail 0
+inlined modules: app.js, data.js, domain.js, charts.js, views.js
+module graph evaluated — no temporal-dead-zone crash
+boot() ran — login screen rendered
+records parsed: 37
+all 10 routes render through the bundled code
+all 43 DOM checks passed against dist/nebula-ar.html
 ```
 
-The suite exercises the shipped code paths directly, not a reimplementation:
+Three layers, each running the shipped code rather than a reimplementation:
+
+**`npm test` — 46 unit tests** over `domain.js` and `charts.js`:
 
 * parsing and type coercion against `data/receivables.csv`, plus a staleness
   check that fails if `js/data.js` drifts from the CSV;
@@ -159,20 +167,32 @@ The suite exercises the shipped code paths directly, not a reimplementation:
 * four simulation scenarios against the baseline;
 * search ranking, filtering, sorting, formatting and CSV round-tripping;
 * every chart primitive emitting well-formed SVG with no `NaN`;
-* **all ten routes rendered through the real view functions** against a DOM stub,
-  asserting none emits `undefined` or `NaN`;
+* all ten routes rendered through the real view functions;
 * recording a payment through the real store — lot 2069 settles, the totals
   move, the audit entry is written, and discarding restores the source state.
 
+**`npm run verify:bundle`** extracts the five modules inlined in
+`dist/nebula-ar.html`, writes them back out, and imports the entry point the way
+the browser's import map does. This is what catches a cycle-induced
+temporal-dead-zone crash, which would otherwise only appear in a browser.
+
+**`npm run smoke:dom`** executes the bundle's code inside jsdom and drives the
+UI end to end — 43 assertions: the login screen, entering the workspace, six KPI
+tiles with Indian-locale formatting, four SVG charts, **all ten routes**, the lot
+register's 37 rows, the buyer filter narrowing to 7 and resetting, the lot-2040
+detail drawer flagging its missing documents, posting a receipt that settles lot
+2069 and moves the totals to ₹17,49,802, discarding it, and the command palette
+finding STERLING ENTERPRISES and closing on Escape.
+
 ### Not verified here
 
-There is no browser in this environment, so the layout, CSS animations, the
-command palette's keyboard handling and the offline bundle's import-map boot
-have not been visually confirmed. They are served and reachable (every asset
-returns `200`), and the module graph, inlined CSS and embedded data were checked
-programmatically, but the rendering itself is unverified.
-
----
+There is no browser engine in this environment (Chromium and Firefox downloads
+are blocked), so **visual rendering is unconfirmed**: layout, CSS animations, the
+aurora background, and the offline bundle's blob-URL import-map boot path have
+not been seen by an eye or a real engine. jsdom parses SVG with its HTML parser
+and drops siblings after an SVG `<title>`, so it also under-counts chart shapes;
+that assertion is written to tolerate it. Everything above that is asserted was
+asserted against the code that ships.
 
 ## Design
 

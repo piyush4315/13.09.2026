@@ -7,7 +7,7 @@ import { CSV } from './data.js';
 import {
   parseReceivables, totals, byBuyer, ageingByBuyer, cumulativeSeries, weeklyCollections,
   auditRecords, riskScore, riskBand, iso, fmt0, fmtCompact, fmtPct, fmtDate,
-  searchRecords, fuzzyScore, sortRecords, simulate, byBuyer as byBuyerFn,
+  searchRecords, fuzzyScore, sortRecords, simulate,
 } from './domain.js';
 import * as charts from './charts.js';
 import * as views from './views.js';
@@ -711,7 +711,6 @@ export function boot() {
   });
 
   // expose a tiny debug surface for console-driven verification
-  window.NEBULA = { store, derived, charts, totals, byBuyer: byBuyerFn, simulate, navigate, showLot, openPalette };
+  window.NEBULA = { store, derived, charts, totals, byBuyer, simulate, navigate, showLot, openPalette };
 }
 
-export { charts, iso, fmt0, fmtCompact, fmtPct, fmtDate, sortRecords };

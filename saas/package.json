@@ -2,16 +2,22 @@
   "name": "nebula-ar",
   "version": "1.0.0",
   "private": true,
-  "description": "NEBULA AR — a zero-dependency receivables operating system for MSTC e-auction settlements.",
+  "description": "NEBULA AR \u2014 a zero-dependency receivables operating system for MSTC e-auction settlements.",
   "type": "module",
   "scripts": {
     "test": "node --test \"test/*.test.js\"",
+    "verify:bundle": "node tools/verify-bundle.js",
+    "smoke:dom": "node tools/smoke-dom.js",
+    "check": "node --test \"test/*.test.js\" && node tools/verify-bundle.js && node tools/smoke-dom.js",
     "gen": "node tools/gen-data.js",
+    "bundle": "node tools/bundle.js",
     "start": "python3 -m http.server 8080 --bind 0.0.0.0"
   },
   "engines": {
     "node": ">=20"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "jsdom": "^30.0.1"
+  }
 }
