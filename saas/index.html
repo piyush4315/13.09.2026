@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-density="comfortable">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="description" content="NEBULA AR — a receivables operating system for MSTC e-auction settlements.">
+<title>NEBULA AR · Receivables Operating System</title>
+<link rel="stylesheet" href="css/theme.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%234f7cff'/%3E%3Cpath d='M4 15a8 8 0 0 1 16 0' stroke='white' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='15' r='2.4' fill='white'/%3E%3C/svg%3E">
+</head>
+<body>
+  <div class="bg-field" aria-hidden="true"></div>
+  <div class="bg-orb o1" aria-hidden="true"></div>
+  <div class="bg-orb o2" aria-hidden="true"></div>
+
+  <div id="app" class="login">
+    <noscript>
+      <p style="padding:2rem;max-width:40rem">NEBULA AR is a client-side application and needs JavaScript enabled.
+      All computation happens in your browser — nothing is sent to a server.</p>
+    </noscript>
+  </div>
+
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+  <script type="module">
+    import { boot } from './js/app.js';
+    boot();
+  </script>
+</body>
+</html>
