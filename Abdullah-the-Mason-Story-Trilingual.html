@@ -3,92 +3,88 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Abdullah the Mason — Trilingual Story Page (English · मराठी · हिंदी)</title>
+<title>Abdullah the Mason — Line-by-Line Story (English → हिन्दी → मराठी)</title>
 <style>
 :root{--ink:#2b2b33;--paper:#fffdf6;--purple:#7b5ea7;}
 *{box-sizing:border-box}
 body{font-family:'Comic Sans MS','Segoe UI','Noto Sans Devanagari','Mangal',Verdana,sans-serif;background:var(--paper);color:var(--ink);margin:0;padding:24px 10px;}
-.page{max-width:1100px;margin:0 auto;background:#fff;border:3px solid var(--purple);border-radius:18px;padding:26px 30px 42px;box-shadow:0 6px 24px rgba(0,0,0,.08);}
-header h1{font-size:28px;text-align:center;margin:0 0 4px;color:var(--purple);}
-.subtitle{text-align:center;font-size:15px;color:#666;margin:0 0 6px;}
-section.topic{margin-top:28px;}
-section.topic h2{font-size:20px;color:#fff;display:inline-block;padding:7px 16px;border-radius:12px;margin:0 0 12px;background:#457b9d;}
-.tri-note{font-size:13.5px;color:#666;background:#f7f4ff;border-radius:10px;padding:8px 12px;margin:0 0 12px;line-height:1.6;}
-.tri-story{border:2px solid #f0d9a8;border-radius:14px;overflow:hidden;}
-.trow{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid #f3e8d0;}
-.trow-head{border-top:none;}
-.trow-head .tcell{font-weight:bold;font-size:14.5px;padding:8px 14px;}
-.trow-head .eng{background:#eaf2f8;color:#2c5f8a;}
-.trow-head .mr{background:#e9f6f1;color:#1d7a6f;}
-.trow-head .hi{background:#fdf3e7;color:#b0722a;}
-.tcell{padding:10px 14px;font-size:15px;line-height:1.7;break-inside:avoid;}
-.tcell.eng{background:#f8fbfe;border-right:1px solid #f3e8d0;}
-.tcell.mr{background:#fbfdfc;border-right:1px solid #f3e8d0;}
-.tcell.hi{background:#fffdf9;}
-.pnum{display:inline-flex;width:22px;height:22px;border-radius:50%;background:#efe9f7;color:var(--purple);align-items:center;justify-content:center;font-weight:bold;font-size:12px;flex:none;margin-right:6px;}
-.moral-row .tcell{background:#fff8e1 !important;font-size:15px;}
-.tag{display:none;}
-.nw3{margin-top:16px;border:2px solid #e5e0f0;border-radius:14px;overflow:hidden;}
-.nw3-head{display:grid;grid-template-columns:1fr 1.3fr 1.3fr;background:#f3efff;font-weight:bold;font-size:14px;}
-.nw3-head span,.nw3-row span{padding:8px 14px;}
-.nw3-head span{border-right:1px solid #e5e0f0;}
-.nw3-row{display:grid;grid-template-columns:1fr 1.3fr 1.3fr;font-size:14.5px;border-top:1px solid #f3e8d0;}
-.nw3-row .w{font-weight:bold;color:#2c5f8a;border-right:1px solid #f3e8d0;}
-.nw3-row span:nth-child(2){border-right:1px solid #f3e8d0;color:#1d7a6f;}
-.nw3-row span:nth-child(3){color:#b0722a;}
-.about{margin-top:30px;background:#f7f4ff;border-radius:12px;padding:12px 16px;font-size:13px;color:#666;line-height:1.6;}
-@media (max-width:860px){
-  .trow,.nw3-head,.nw3-row{grid-template-columns:1fr;}
-  .trow-head{display:flex;}
-  .trow-head .tcell{flex:1;border-right:1px solid #f3e8d0;}
-  .trow-head .tcell:last-child{border-right:none;}
-  .tcell{border-right:none !important;border-bottom:1px dashed #eee !important;}
-  .tcell.hi{border-bottom:none !important;}
-  .tcell .tag{display:inline-block;font-size:11px;font-weight:bold;color:#999;margin-right:6px;text-transform:uppercase;}
-  .nw3-row .w,.nw3-row span{border-right:none !important;}
-}
+.page{max-width:900px;margin:0 auto;background:#fff;border:3px solid var(--purple);border-radius:18px;padding:26px 30px 42px;box-shadow:0 6px 24px rgba(0,0,0,.08);}
+header h1{font-size:27px;text-align:center;margin:0 0 4px;color:var(--purple);}
+.subtitle{text-align:center;font-size:14.5px;color:#666;margin:0 0 10px;}
+.legend{text-align:center;font-size:13.5px;margin:0 0 4px;color:#444;}
+.legend b{padding:2px 10px;border-radius:8px;}
+.lg-en{background:#eef4fb;color:#1f3a5f;}
+.lg-hi{background:#fdf0e7;color:#8a3d0d;}
+.lg-mr{background:#e9f6f1;color:#114d44;}
+section.topic{margin-top:24px;}
+.about{margin-top:30px;background:#f7f4ff;border-radius:12px;padding:12px 16px;font-size:13px;color:#666;line-height:1.65;}
 @media print{
   body{background:#fff;padding:0;}
   .page{border:none;box-shadow:none;max-width:none;padding:8mm;}
-  .trow,.nw3-row{break-inside:avoid;}
+  .tri2-line{break-inside:avoid;}
 }
 </style>
 </head>
 <body>
 <div class="page">
 <header>
-  <h1>🏠 Abdullah the Mason · अभुल्लाह माँसाई · अभुल्लाह मीनार</h1>
-  <p class="subtitle">Class 3 English · Story in Three Languages on One Page — for reading &amp; explaining · श्रेणी 3 इंग्रजी</p>
+<h1>🏠 Abdullah the Mason · अभुल्लाह माँसाई · अब्दुल्लाह मीनार</h1>
+<p class="subtitle">Class 3 English · Line-by-Line Story — English, then हिन्दी below it, then मराठी · श्रेणी 3 इंग्र्जी</p>
+<p class="legend"><b class="lg-en">1 · English</b> ↓ <b class="lg-hi">2 · हिन्दी</b> ↓ <b class="lg-mr">3 · मराठी</b> — अप्सराय क्षा</p>
 </header>
+<section class="topic">
+<style>
+.tri2{border:2px solid #f0d9a8;border-radius:14px;overflow:hidden;}
+.tri2-note{font-size:13.5px;color:#666;background:#f7f4ff;border-radius:10px;padding:9px 13px;margin:0 0 12px;line-height:1.7;}
+.tri2-line{display:flex;border-top:1px solid #f3e8d0;break-inside:avoid;}
+.tri2-line:first-child{border-top:none;}
+.tri2-num{flex:none;width:42px;display:flex;align-items:flex-start;justify-content:center;padding-top:14px;font-weight:bold;color:#7b5ea7;background:#faf7ff;font-size:15px;}
+.tri2-body{flex:1;padding:10px 14px 12px;min-width:0;}
+.tri2-body p{margin:0 0 8px;line-height:1.75;}
+.tri2-body p:last-child{margin-bottom:0;}
+.tri2-en{font-size:16.5px;font-weight:600;color:#1f3a5f;background:#eef4fb;border-radius:9px;padding:7px 12px;}
+.tri2-hi{font-size:16px;color:#8a3d0d;background:#fdf0e7;border-radius:9px;padding:7px 12px;}
+.tri2-mr{font-size:16px;color:#114d44;background:#e9f6f1;border-radius:9px;padding:7px 12px;}
+.tri2-lang{display:inline-block;font-size:10.5px;font-weight:bold;text-transform:uppercase;letter-spacing:.4px;border-radius:6px;padding:1px 8px;margin-right:8px;vertical-align:2px;}
+.tri2-lang-hi{background:#f7d9c4;color:#8a3d0d;}
+.tri2-lang-mr{background:#cdeadf;color:#114d44;}
+.tri2-moral .tri2-body{background:#fff8e1;}
+.tri2-moral .tri2-en,.tri2-moral .tri2-hi,.tri2-moral .tri2-mr{background:transparent;padding:3px 12px;}
+.tri2-words{margin-top:16px;width:100%;border-collapse:separate;border-spacing:0;font-size:14.5px;border:2px solid #e5e0f0;border-radius:12px;overflow:hidden;}
+.tri2-words th{background:#f3efff;padding:9px 14px;text-align:left;font-size:14px;color:#4a3b66;}
+.tri2-words td{padding:9px 14px;border-top:1px solid #f3e8d0;vertical-align:top;}
+.tri2-words td:first-child{font-weight:bold;color:#2c5f8a;}
+.tri2-words td:nth-child(2){color:#8a3d0d;}
+.tri2-words td:nth-child(3){color:#114d44;}
+</style>
+<h2>📖 Story · कथा · कहानी — Line by Line (English → हिन्दी → मराठी)</h2>
+<p class="tri2-note">Read line by line: <b>English first</b> — its <b>Hindi</b> meaning is right below it, and <b>Marathi</b> below that. ·<br>ओळ-ओळने वाचा: <b>आधी इंग्रजी</b> — तिच्यातळाशी <b>हिंदी</b> अर्थ, आणि मग <b>मराठी</b>. ·<br>पंक्ति-दर-पंक्ति पढ़ें: <b>पहले अंग्रेज़ी</b> — उसके ठीक नीचे <b>हिंदी</b>, फिर <b>मराठी</b>.</p>
+<div class="tri2">
+<div class="tri2-line"><span class="tri2-num">1</span><div class="tri2-body"><p class="tri2-en">Abdullah was a <b>skilled mason</b>.</p><p class="tri2-hi"><span class="tri2-lang tri2-lang-hi">हिंदी</span>अब्दुल्लाह एक <b>हुनरमंद मीनार</b> था।</p><p class="tri2-mr"><span class="tri2-lang tri2-lang-mr">मराठी</span>अभुल्लाह हा एक <b>हुनारमंद माँसाई</b> होता.</p></div></div>
+<div class="tri2-line"><span class="tri2-num">2</span><div class="tri2-body"><p class="tri2-en">He had been working as a mason for many years, but he never had a house of his own. He was growing old and did not want to work anymore. He just wanted to live a <b>leisurely</b> life with his wife and children in a house of his own.</p><p class="tri2-hi"><span class="tri2-lang tri2-lang-hi">हिंदी</span>वो बहुत सारे सालों से मीनार की नौकरी कर रहा था, लेकिन उसके पास कभी अपना घर नहीं रहा। अब वो बूढ़ा होता जा रहा था और उसे काम करना नहीं चाहता था। वो बस अपनी पत्नी और बच्चों के साथ, अपने घर में, <b>शांति से (आराम से)</b> जीवन जीना चाहता था।</p><p class="tri2-mr"><span class="tri2-lang tri2-lang-mr">मराठी</span>तो अनेक वर्षे माँसाई म्हणून काम करत होता, पण त्याच्याकडे स्वतःचं घर कधीही नव्हतं. तो वयाने बूढा होत होता आणि त्याला पुन्हा काम करायचं नव्हतं. तो आपल्या पत्नी व मुलांसोबत स्वतःच्या घरात <b>निवांत</b> जीवन जगायचं.</p></div></div>
+<div class="tri2-line"><span class="tri2-num">3</span><div class="tri2-body"><p class="tri2-en">So, one day, Abdullah told his <b>employer</b>, Junaid, that he wanted to <b>retire</b>. Junaid was sad to lose a skilled worker like Abdullah.</p><p class="tri2-hi"><span class="tri2-lang tri2-lang-hi">हिंदी</span>इसलिए, एक दिन, अब्दुल्लाह ने अपने <b>मालिक</b> जुनाइद से कहा कि उसे <b>सेवानिवृत्ति</b> लेनी है। इतने हुनरमंद कामगार को खोकर जुनाइद को दुख हुआ।</p><p class="tri2-mr"><span class="tri2-lang tri2-lang-mr">मराठी</span>त्यामुळे, एका दिवशी, अभुल्लाहने आपल्या <b>पगारीदार</b> जुनाइदला सांगितलं की त्याला <b>निवृत्ती</b> घ्यायची आहे. इतक्या हुनारमंद कामगार गमावल्याबद्दल जुनाइदला दुःख वाटलं.</p></div></div>
+<div class="tri2-line"><span class="tri2-num">4</span><div class="tri2-body"><p class="tri2-en">He requested Abdullah to help him for the last time, by building just one more house. Abdullah did not want to work, but Junaid insisted. Abdullah finally agreed <b>half-heartedly</b>.</p><p class="tri2-hi"><span class="tri2-lang tri2-lang-hi">हिंदी</span>जुनाइद ने अब्दुल्लाह से आखिरी बार मदत माँगी — बस एक और घर बनाने की। अब्दुल्लाह को काम करना नहीं था, लेकिन जुनाइद ने ज़ोर लगाया। अंत में अब्दुल्लाह ने <b>आधे मन से (दिल न लगाकर)</b> हाँ कर दी।</p><p class="tri2-mr"><span class="tri2-lang tri2-lang-mr">मराठी</span>त्याने अभुल्लाहला शेवटच्या वेळी मदत करण्यास सांगितलं — फक्त आणखी एक घर बाणवण्याची. अभुल्लाहला काम करायचं नव्हतं, पण जुनाइदने दाद घेतली. अभुल्लाहने अखेर <b>अर्ध्या मनाने</b> मान्यता केली.</p></div></div>
+<div class="tri2-line"><span class="tri2-num">5</span><div class="tri2-body"><p class="tri2-en">Abdullah started to build the last house for Junaid. However, by then he was bored. So, he did not put much effort and even used poor-quality materials to build the house.</p><p class="tri2-hi"><span class="tri2-lang tri2-lang-hi">हिंदी</span>अब्दुल्लाह ने जुनाइद के लिए आखिरी घर बनाना शुरू किया। लेकिन तब तक उसे ऊब सी लग रही थी। इसलिए उसने ज़्यादा मेहनत नहीं की और घर बनाने में कम दर्जे की ईंटें व सामान तक लगाया।</p><p class="tri2-mr"><span class="tri2-lang tri2-lang-mr">मराठी</span>अभुल्लाहने जुनाइदसाठी शेवटचं घर बाणवण्यास सुरुवात केली. पण तेव्हापर्यंत त्याला याड येत होती. त्यामुळे, त्याने जास्त प्रयत्न केले नाही आणि कमी दर्जाची साहित्ये वापरून घर बाणवले.</p></div></div>
+<div class="tri2-line"><span class="tri2-num">6</span><div class="tri2-body"><p class="tri2-en">He quickly completed building the house. Then, he called Junaid.</p><p class="tri2-hi"><span class="tri2-lang tri2-lang-hi">हिंदी</span>उसने जल्दी-जल्दी घर पूरा कर लिया। फिर उसने जुनाइद को बुलाया।</p><p class="tri2-mr"><span class="tri2-lang tri2-lang-mr">मराठी</span>त्याने लवकर घर पूर्ण केले. मग, त्याने जुनाइदला बोलावले.</p></div></div>
+<div class="tri2-line"><span class="tri2-num">7</span><div class="tri2-body"><p class="tri2-en">Junaid came to meet Abdullah and handed over house papers and keys to him. “I got this house made for you as my <b>parting</b> gift. You have been the best mason. No one could have made a better house than you.” Abdullah hung his head.</p><p class="tri2-hi"><span class="tri2-lang tri2-lang-hi">हिंदी</span>जुनाइद अब्दुल्लाह से मिलने आया और उसे घर के कागज़ और चाबियाँ दे दीं। “मैंने यह घर तुम्हारे लिए बनवाया है। यह मेरी <b>विदाई की भेंट (parting gift)</b> है। तुम सबसे बेहतरीन मीनार रहे हो। तुमसे अच्छा घर कोई नहीं बना सकता था।” सुनकर अब्दुल्लाह ने सिर झुका लिया।</p><p class="tri2-mr"><span class="tri2-lang tri2-lang-mr">मराठी</span>जुनाइद अभुल्लाहला भेटायला आला आणि त्याला घरपत्रे आणि चिप्या दिल्या. “मी हे घर तुमच्यासाठी बाणवून दिलं आहे, हे तुम्हाला मी <b>निरोपाची</b> भेट म्हणून देत आहे. तुम्ही सर्वोत्तम माँसाई आहात. तुमच्या पेक्षा चांगलं घर बाणवणारा कोणीच नाही.” अभुल्लाहने माथा खाली केला.</p></div></div>
+<div class="tri2-line"><span class="tri2-num">8</span><div class="tri2-body"><p class="tri2-en">He was <b>ashamed</b> because he had not done a good job on the house. If he had known that he was building his own house, he would have made it better than any other house he had ever built.</p><p class="tri2-hi"><span class="tri2-lang tri2-lang-hi">हिंदी</span>उसे <b>बहुत शर्मिंदगी</b> हुई, क्योंकि उसने घर का अच्छा काम नहीं किया था। अगर उसे पहले पता होता कि वो अपना अपना घर बना रहा है, तो वो इसे अपने कभी बनाए हुए किसी भी घर से बेहतर बनाता।</p><p class="tri2-mr"><span class="tri2-lang tri2-lang-mr">मराठी</span>त्याला <b>लाज</b> वाटली कारण त्याने घराचं काम चांगलं केले नव्हतं. जर त्याला ठाऊक असतं की तो स्वतःचं घर बाणवत आहे, तर तो ते घर त्याने कधीही बाणवलेल्या कोणत्याही घरापेक्षा चांगलं बाणवलं असतं.</p></div></div>
+<div class="tri2-line tri2-moral"><span class="tri2-num">🌟</span><div class="tri2-body"><p class="tri2-en"><b>🌟 Moral:</b> That is why we must always do our work well so that we don't have to be sorry later.</p><p class="tri2-hi"><span class="tri2-lang tri2-lang-hi">हिंदी</span><b>🌟 सीख:</b> इसलिए हमें हमेशा अपना काम अच्छा करना चाहिए, ताकि बाद में पछतावा न करना पड़े।</p><p class="tri2-mr"><span class="tri2-lang tri2-lang-mr">मराठी</span><b>🌟 संदेश:</b> म्हणूनच आपल्याने आपलं काम नेहमी चांगलं करावंच लागतं, जेणेकरून नंतर पश्चाताप करावा लागणार नाही.</p></div></div>
+</div>
+<table class="tri2-words">
+<tr><th>Word (English)</th><th>हिंदी अर्थ</th><th>मराठी अर्थ</th></tr>
+<tr><td>skilled</td><td>काम में माहिर</td><td>कामात माहिर</td></tr>
+<tr><td>mason</td><td>जो ईंटों से इमारत बनाता है</td><td>जो इमारतीसाठी ईंट मांडतो</td></tr>
+<tr><td>leisurely</td><td>आराम से, शांति से</td><td>आरामात, निवांत</td></tr>
+<tr><td>employer</td><td>जो लोगों को नौकरी देता है</td><td>जो लोकांना नोकरदारी देतो</td></tr>
+<tr><td>retire</td><td>काम छोड़ देना</td><td>काम सोडणे</td></tr>
+<tr><td>half-heartedly</td><td>पूरे मन से नहीं, आधे मन से</td><td>मनापासून न करता, अर्ध्या मनाने</td></tr>
+<tr><td>parting</td><td>विदाई, अलविदा</td><td>निघून जाणे, निरोप</td></tr>
+<tr><td>ashamed</td><td>शरमिंदगी, लाज</td><td>लाज वाटणे, शरम</td></tr>
+</table>
 
-<section class="topic c-math" id="story">
-  <h2>📖 Story · कथा · कहानी — in Three Languages (English | मराठी | हिंदी)</h2>
-  <p class="tri-note">Read paragraph by paragraph: <b>English first</b>, then explain in Marathi or Hindi. ·
-  खंड-खंड वाचा: <b>आधी इंग्रजी</b>, मग मराठी/हिंदीतून समजावा. ·
-  पैराग्राफ-दर-पैराग्राफ पढ़िए: <b>पहले अंग्रेज़ी</b>, फिर मराठी/हिंदी से समझाइए.</p>
-  <div class="tri-story">
-    <div class="trow trow-head"><div class="tcell eng">English</div><div class="tcell mr">मराठी</div><div class="tcell hi">हिंदी</div></div>
-<div class="trow"><div class="tcell eng"><span class="pnum">1</span><span class="tag">EN</span> Abdullah was a <b>skilled mason</b>.</div><div class="tcell mr"><span class="pnum">1</span><span class="tag">मराठी</span> अभुल्लाह हा एक <b>हुनारमंद माँसाई</b> होता.</div><div class="tcell hi"><span class="pnum">1</span><span class="tag">हिंदी</span> अभुल्लाह एक <b>हुनरमंद मीनार</b> था।</div></div>
-    <div class="trow"><div class="tcell eng"><span class="pnum">2</span><span class="tag">EN</span> He had been working as a mason for many years, but he never had a house of his own. He was growing old and did not want to work anymore. He just wanted to live a <b>leisurely</b> life with his wife and children in a house of his own.</div><div class="tcell mr"><span class="pnum">2</span><span class="tag">मराठी</span> तो अनेक वर्षे माँसाई म्हणून काम करत होता, पण त्याच्याकडे स्वतःचं घर कधीही नव्हतं. तो वयाने बूढा होत होता आणि त्याला पुन्हा काम करायचं नव्हतं. तो आपल्या पत्नी व मुलांसोबत स्वतःच्या घरात <b>निवांत</b> जीवन जगायचं.</div><div class="tcell hi"><span class="pnum">2</span><span class="tag">हिंदी</span> वो बहुत सारे सालों से मीनार की नौकरी कर रहा था, लेकिन उसके पास कभी अपना घर नहीं रहा। अब वो बूढ़ा होता जा रहा था और उसे काम करना नहीं चाहता था। वो बस अपनी पत्नी और बच्चों के साथ, अपने घर में, <b>शांति से (निवांत)</b> जीवन जीना चाहता था।</div></div>
-    <div class="trow"><div class="tcell eng"><span class="pnum">3</span><span class="tag">EN</span> So, one day, Abdullah told his <b>employer</b>, Junaid, that he wanted to <b>retire</b>. Junaid was sad to lose a skilled worker like Abdullah.</div><div class="tcell mr"><span class="pnum">3</span><span class="tag">मराठी</span> त्यामुळे, एका दिवशी, अभुल्लाहने आपल्या <b>पगारीदार</b> जुनाइदला सांगितलं की त्याला <b>निवृत्ती</b> घ्यायची आहे. इतक्या हुनारमंद कामगार गमावल्याबद्दल जुनाइदला दुःख वाटलं.</div><div class="tcell hi"><span class="pnum">3</span><span class="tag">हिंदी</span> इसलिए, एक दिन, अभुल्लाह ने अपने <b>मालिक</b> जुनाइद से कहा कि उसे <b>सेवानिवृत्ति</b> लेनी है। इतने हुनरमंद कामगार को खोकर जुनाइद को दुख हुआ।</div></div>
-    <div class="trow"><div class="tcell eng"><span class="pnum">4</span><span class="tag">EN</span> He requested Abdullah to help him for the last time, by building just one more house. Abdullah did not want to work, but Junaid insisted. Abdullah finally agreed <b>half-heartedly</b>.</div><div class="tcell mr"><span class="pnum">4</span><span class="tag">मराठी</span> त्याने अभुल्लाहला शेवटच्या वेळी मदत करण्यास सांगितलं — फक्त आणखी एक घर बाणवण्याची. अभुल्लाहला काम करायचं नव्हतं, पण जुनाइदने दाद घेतली. अभुल्लाहने अखेर <b>अर्ध्या मनाने</b> मान्यता केली.</div><div class="tcell hi"><span class="pnum">4</span><span class="tag">हिंदी</span> जुनाइद ने अभुल्लाह से आखिरी बार मदत माँगी — बस एक और घर बनाने की। अभुल्लाह को काम करना नहीं था, लेकिन जुनाइद ने ज़ोर लगाया। अंत में अभुल्लाह ने <b>आधे मन से (दिल न लगाकर)</b> हाँ कर दी।</div></div>
-    <div class="trow"><div class="tcell eng"><span class="pnum">5</span><span class="tag">EN</span> Abdullah started to build the last house for Junaid. However, by then he was bored. So, he did not put much effort and even used poor-quality materials to build the house.</div><div class="tcell mr"><span class="pnum">5</span><span class="tag">मराठी</span> अभुल्लाहने जुनाइदसाठी शेवटचं घर बाणवण्यास सुरुवात केली. पण तेव्हापर्यंत त्याला याड येत होती. त्यामुळे, त्याने जास्त प्रयत्न केले नाही आणि कमी दर्जाची साहित्ये वापरून घर बाणवले.</div><div class="tcell hi"><span class="pnum">5</span><span class="tag">हिंदी</span> अभुल्लाह ने जुनाइद के लिए आखिरी घर बनाना शुरू किया। लेकिन तब तक उसे ऊब सी लग रही थी। इसलिए उसने ज़्यादा मेहनत नहीं की और घर बनाने में कम दर्जे की ईंटें व सामान तक लगाया।</div></div>
-    <div class="trow"><div class="tcell eng"><span class="pnum">6</span><span class="tag">EN</span> He quickly completed building the house. Then, he called Junaid.</div><div class="tcell mr"><span class="pnum">6</span><span class="tag">मराठी</span> त्याने लवकर घर पूर्ण केले. मग, त्याने जुनाइदला बोलावले.</div><div class="tcell hi"><span class="pnum">6</span><span class="tag">हिंदी</span> उसने जल्दी-जल्दी घर पूरा कर लिया। फिर उसने जुनाइद को बुलाया।</div></div>
-    <div class="trow"><div class="tcell eng"><span class="pnum">7</span><span class="tag">EN</span> Junaid came to meet Abdullah and handed over house papers and keys to him. “I got this house made for you as my <b>parting</b> gift. You have been the best mason. No one could have made a better house than you.” Abdullah hung his head.</div><div class="tcell mr"><span class="pnum">7</span><span class="tag">मराठी</span> जुनाइद अभुल्लाहला भेटायला आला आणि त्याला घरपत्रे आणि चिप्या दिल्या. “मी हे घर तुमच्यासाठी बाणवून दिलं आहे, हे तुम्हाला मी <b>निरोपाची</b> भेट म्हणून देत आहे. तुम्ही सर्वोत्तम माँसाई आहात. तुमच्या पेक्षा चांगलं घर बाणवणारा कोणीच नाही.” अभुल्लाहने माथा खाली केला.</div><div class="tcell hi"><span class="pnum">7</span><span class="tag">हिंदी</span> जुनाइद अभुल्लाह से मिलने आया और उसे घर के कागज़ और चाबियाँ दे दीं। “मैंने यह घर तुम्हारे लिए बनवाया है। यह मेरी <b>विदाई की भेंट (parting gift)</b> है। तुम सबसे बेहतरीन मीनार रहे हो। तुमसे अच्छा घर कोई नहीं बना सकता था。” सुनकर अभुल्लाह ने सिर झुका लिया।</div></div>
-    <div class="trow"><div class="tcell eng"><span class="pnum">8</span><span class="tag">EN</span> He was <b>ashamed</b> because he had not done a good job on the house. If he had known that he was building his own house, he would have made it better than any other house he had ever built.</div><div class="tcell mr"><span class="pnum">8</span><span class="tag">मराठी</span> त्याला <b>लाज</b> वाटली कारण त्याने घराचं काम चांगलं केले नव्हतं. जर त्याला ठाऊक असतं की तो स्वतःचं घर बाणवत आहे, तर तो ते घर त्याने कधीही बाणवलेल्या कोणत्याही घरापेक्षा चांगलं बाणवलं असतं.</div><div class="tcell hi"><span class="pnum">8</span><span class="tag">हिंदी</span> उसे <b>बहुत शर्मिंदगी</b> हुई, क्योंकि उसने घर का अच्छा काम नहीं किया था। अगर उसे पहले पता होता कि वो अपना अपना घर बना रहा है, तो वो इसे अपने कभी बनाए हुए किसी भी घर से बेहतर बनाता।</div></div>
-    <div class="trow moral-row"><div class="tcell eng"><b>🌟 Moral:</b> That is why we must always do our work well so that we don't have to be sorry later.</div><div class="tcell mr"><b>🌟 संदेश:</b> म्हणूनच आपल्याने आपलं काम नेहमी चांगलं करावंच लागतं, जेणेकरून नंतर पश्चाताप करावा लागणार नाही.</div><div class="tcell hi"><b>🌟 सीख:</b> इसलिए हमें हमेशा अपना काम अच्छा करना चाहिए, ताकि बाद में पछतावा न करना पड़े।</div></div>
-  </div>
-  <div class="nw3">
-    <div class="nw3-head"><span>Word (English)</span><span>मराठी अर्थ</span><span>हिंदी अर्थ</span></div>
-<div class="nw3-row"><span class="w">skilled</span><span>कामात माहिर</span><span>काम में माहिर</span></div><div class="nw3-row"><span class="w">mason</span><span>जो इमारतीसाठी ईंट मांडतो</span><span>जो ईंटों से इमारत बनाता है</span></div><div class="nw3-row"><span class="w">leisurely</span><span>आरामात, निवांत</span><span>आराम से, शांति से</span></div><div class="nw3-row"><span class="w">employer</span><span>जो लोकांना नोकरदारी देतो</span><span>जो लोगों को नौकरी देता है</span></div><div class="nw3-row"><span class="w">retire</span><span>काम सोडणे</span><span>काम छोड़ देना</span></div><div class="nw3-row"><span class="w">half-heartedly</span><span>मनापासून न करता, अर्ध्या मनाने</span><span>पूरे मन से नहीं, आधे मन से</span></div><div class="nw3-row"><span class="w">parting</span><span>निघून जाणे, निरोप</span><span>विदाई, अलविदा</span></div><div class="nw3-row"><span class="w">ashamed</span><span>लाज वाटणे, शरम</span><span>शरमिंदगी, लाज</span></div>
-  </div>
 </section>
-
 <div class="about">
-  <b>About this page:</b> Generated on 13 September 2026 · The story of the Class 3 English lesson “Abdullah the Mason” shown in
-  English, Marathi (मराठी) and Hindi (हिंदी) side by side, paragraph by paragraph (numbered 1–9), with the
-  New Words table and the moral in all three languages. Fully self-contained — opens on any mobile, offline,
-  and prints cleanly (landscape is best for the three columns).
+<b>About this page:</b> Generated on 13 September 2026 · The story of the Class 3 English lesson “Abdullah the Mason”, shown line by line — each English line with its <b>हिन्दी</b> translation right below it and <b>मराठी</b> below that — plus the New Words table (Word · हिन्दी अर्थ · मराठी अर्थ) and the moral in all three languages. Fully self-contained — opens on any mobile, works offline, and prints cleanly.
 </div>
 </div>
 </body>
