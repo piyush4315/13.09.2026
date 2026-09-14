@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ganesh Mandap — Modern Minimal Upgrade Plan (2026)</title>
+<style>
+  :root{
+    --ink:#2a2118;
+    --ink-soft:#5c5041;
+    --cream:#fbf7f0;
+    --card:#ffffff;
+    --line:#e8dfd1;
+    --gold:#b8873a;
+    --gold-soft:#f0e2c8;
+    --sage:#6f7f63;
+    --marigold:#e08a20;
+    --rose:#b4442f;
+    --shadow:0 1px 2px rgba(42,33,24,.05), 0 8px 24px rgba(42,33,24,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:ui-sans-serif,-apple-system,"Segoe UI",Inter,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  header.hero{
+    padding:52px 0 34px;
+    background:
+      radial-gradient(900px 340px at 15% -10%, #f6e6c9 0%, rgba(246,230,201,0) 60%),
+      radial-gradient(700px 300px at 90% 0%, #e7ecdf 0%, rgba(231,236,223,0) 65%);
+    border-bottom:1px solid var(--line);
+  }
+  .kicker{letter-spacing:.16em;text-transform:uppercase;font-size:11.5px;color:var(--gold);font-weight:700;margin:0 0 10px}
+  h1{font-size:clamp(30px,4.6vw,46px);line-height:1.12;margin:0 0 14px;letter-spacing:-.02em}
+  h1 em{font-style:normal;color:var(--gold)}
+  .lead{font-size:18px;color:var(--ink-soft);max-width:62ch;margin:0}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .fact{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:13px;box-shadow:var(--shadow)}
+  .fact b{font-weight:700}
+  nav.toc{
+    position:sticky;top:0;z-index:20;background:rgba(251,247,240,.92);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  }
+  nav.toc ul{display:flex;gap:4px;overflow:auto;padding:10px 0;margin:0;list-style:none;scrollbar-width:none}
+  nav.toc ul::-webkit-scrollbar{display:none}
+  nav.toc a{
+    white-space:nowrap;font-size:13px;color:var(--ink-soft);text-decoration:none;
+    padding:6px 12px;border-radius:999px;
+  }
+  nav.toc a:hover{background:var(--gold-soft);color:var(--ink)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(22px,2.8vw,30px);letter-spacing:-.015em;margin:0 0 6px}
+  .sub{color:var(--ink-soft);margin:0 0 24px;max-width:70ch}
+  h3{font-size:17px;margin:26px 0 8px;letter-spacing:-.01em}
+  p{margin:0 0 12px}
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow)}
+  .card h4{margin:0 0 8px;font-size:15.5px}
+  .card p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+  .tag{display:inline-block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+    padding:3px 9px;border-radius:999px;background:var(--gold-soft);color:#7a5a1e;margin-bottom:10px}
+  .tag.top{background:#fbd9a8;color:#7a4a08}
+  .tag.eco{background:#dbe6d3;color:#3f5233}
+  .num{display:flex;gap:14px;align-items:flex-start}
+  .num .n{flex:0 0 30px;height:30px;border-radius:9px;background:var(--ink);color:#fff;display:grid;place-items:center;
+    font-size:13px;font-weight:700;margin-top:2px}
+  ol.line{list-style:none;padding:0;margin:0;counter-reset:s}
+  ol.line > li{counter-increment:s;padding:14px 0;border-bottom:1px dashed var(--line);font-size:15px}
+  ol.line > li:last-child{border-bottom:0}
+  ol.line > li::before{content:counter(s);display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;
+    background:var(--gold-soft);color:#7a5a1e;font-size:12px;font-weight:700;margin-right:10px;vertical-align:-4px}
+  ul.tick{list-style:none;padding:0;margin:0}
+  ul.tick li{position:relative;padding-left:26px;margin-bottom:9px;font-size:14.5px;color:var(--ink-soft)}
+  ul.tick li::before{content:"";position:absolute;left:6px;top:8px;width:7px;height:7px;border-radius:2px;background:var(--gold);transform:rotate(45deg)}
+  .note{background:#fdf6e8;border:1px solid #f0e2c8;border-left:3px solid var(--gold);border-radius:12px;padding:14px 18px;font-size:14.5px;color:#5c4a2a}
+  .warn{background:#fbf0ee;border:1px solid #f0d7d1;border-left:3px solid var(--rose);border-radius:12px;padding:14px 18px;font-size:14.5px;color:#6c3529}
+  .eco{background:#f2f6ee;border:1px solid #dbe6d3;border-left:3px solid var(--sage);border-radius:12px;padding:14px 18px;font-size:14.5px;color:#3f5233}
+  figure{margin:0}
+  figure img{width:100%;border-radius:16px;border:1px solid var(--line);display:block;box-shadow:var(--shadow)}
+  figcaption{font-size:12.5px;color:var(--ink-soft);margin-top:8px;font-style:italic}
+  .swatch{display:flex;gap:8px;margin:12px 0 4px}
+  .swatch span{flex:1;height:44px;border-radius:9px;border:1px solid rgba(0,0,0,.06)}
+  .palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:14px}
+  .palette .p{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+  .palette strong{font-size:14px}
+  .palette small{display:block;color:var(--ink-soft);font-size:12.5px;margin-top:2px}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#f6f0e6;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#7a5a1e}
+  tr:last-child td{border-bottom:0}
+  .price{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+  .check{list-style:none;padding:0;margin:0}
+  .check li{display:flex;gap:12px;align-items:flex-start;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;margin-bottom:8px}
+  .check li:hover{background:#fffdf8}
+  .check input{width:18px;height:18px;margin-top:3px;accent-color:var(--gold);flex:0 0 18px}
+  .check .body{flex:1}
+  .check .t{font-size:14.5px;font-weight:600}
+  .check .d{font-size:13px;color:var(--ink-soft)}
+  .check .p{font-size:13px;color:var(--ink-soft);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .check li.done .t{text-decoration:line-through;color:#9a9186}
+  .totalbar{position:sticky;bottom:0;margin-top:18px;background:var(--ink);color:#fff;border-radius:14px;padding:14px 20px;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;box-shadow:0 10px 30px rgba(42,33,24,.25)}
+  .totalbar .amt{font-size:20px;font-weight:700}
+  .btn{background:#fff;color:var(--ink);border:0;border-radius:999px;padding:8px 16px;font-size:13px;font-weight:600;cursor:pointer}
+  .btn:hover{background:var(--gold-soft)}
+  .mini{font-size:13px;opacity:.8}
+  footer{padding:34px 0 60px;color:var(--ink-soft);font-size:13.5px}
+  .src{font-size:12.5px;color:var(--ink-soft)}
+  .src a{color:var(--gold)}
+  .split{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+  @media (max-width:760px){ .split{grid-template-columns:1fr} header.hero{padding:36px 0 26px} }
+  @media print{
+    nav.toc,.btn{display:none}
+    body{background:#fff}
+    .card,.check li,.totalbar{box-shadow:none}
+    section{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Ganesh Utsav 2026 · Home Mandap Upgrade</p>
+    <h1>Add these <em>seven layers</em> on top of<br>the décor you already have.</h1>
+    <p class="lead">You already have the four hard parts — makhar, backdrop, garlands and serial lights. Everything below is <strong>additive</strong>: what to layer on, in what order, to take a mid-level 2–4 ft home mandap into a calm, modern, “photographed by a designer” space. Nothing here requires dismantling what’s up.</p>
+    <div class="facts">
+      <span class="fact">🗓 <b>Ganesh Chaturthi:</b> Monday, 14 Sept 2026</span>
+      <span class="fact">🪔 <b>Madhyahna muhurat:</b> ~11:00–13:35</span>
+      <span class="fact">🌊 <b>Visarjan:</b> Anant Chaturdashi, 23 Sept 2026</span>
+      <span class="fact">📍 Nagpur · Maharashtra</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <ul>
+      <li><a href="#top5">Top 5 first</a></li>
+      <li><a href="#layers">7 layers</a></li>
+      <li><a href="#lighting">Lighting recipe</a></li>
+      <li><a href="#palette">Colour palette</a></li>
+      <li><a href="#florals">Flowers &amp; foliage</a></li>
+      <li><a href="#floor">Floor &amp; foreground</a></li>
+      <li><a href="#remove">What to remove</a></li>
+      <li><a href="#quick">30-minute wins</a></li>
+      <li><a href="#daywise">Day-by-day</a></li>
+      <li><a href="#shopping">Shopping list</a></li>
+      <li><a href="#safety">Safety &amp; eco</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ TOP 5 ============ -->
+<section id="top5">
+  <div class="wrap">
+    <h2>If you only do five things</h2>
+    <p class="sub">Ranked by visual impact-per-rupee for a mandap that already has structure and lights.</p>
+    <ol class="line">
+      <li><strong>Add a hidden upward light wash.</strong> A warm LED strip (2700K) laid on the floor behind the makhar, pointing <em>up</em> the backdrop. This single change does more than any flower — it turns flat fabric into depth. ₹400–900.</li>
+      <li><strong>Put a light on the idol itself.</strong> Two small warm spotlights or picture lights at 45° from front-left and front-right. Your idol currently reads flat because serial lights only light <em>around</em> it, never <em>on</em> it.</li>
+      <li><strong>Go asymmetric with flowers.</strong> Instead of a symmetric garland frame, cluster all florals in one corner — a single dense crescent or ring at the upper left. Symmetry says “pandal”; asymmetry says “designed”.</li>
+      <li><strong>Raise Bappa off the base.</strong> Add a 3–5 inch riser (acrylic block, marble slab, or a wrapped wooden plank). Height = presence, and it lets you hide a light strip underneath for a floating effect.</li>
+      <li><strong>Declutter to one focal point.</strong> Remove half of what’s on the platform. Minimalism is subtraction before addition — then add one hero object: a brass urli with floating flowers, or a single tall lotus in a matte vase.</li>
+    </ol>
+    <div class="split" style="margin-top:26px">
+      <figure>
+        <img src="images/mandap-day.jpg" alt="Modern minimal home Ganesh mandap in daylight: ivory pleated drapes, brass diyas, single asymmetric floral ring">
+        <figcaption>Day look — ivory pleated drape, one asymmetric floral ring, brass + ceramic only.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/mandap-night.jpg" alt="Same Ganesh mandap at night with warm 2700K uplighting, fairy light curtain and brass diyas">
+        <figcaption>Night look — same set, lights doing 80% of the work.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LAYERS ============ -->
+<section id="layers">
+  <div class="wrap">
+    <h2>The seven layers to add</h2>
+    <p class="sub">Work front-to-back, bottom-to-top. Each layer is independent — skip any that don’t fit your taste.</p>
+
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag top">Layer 1 · Biggest impact</span>
+        <h4>Depth behind the backdrop</h4>
+        <p>Add a <strong>sheer second layer</strong> 20–25 cm in front of your existing backdrop — organza or voile in ivory/champagne, hung loose so it moves slightly. Then run a light strip between the two layers. The idol now sits in front of a glowing haze instead of a wall of cloth. If you want more, add a thin vertical batten of warm light at the two edges to frame the composition.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Layer 2 · Structure</span>
+        <h4>A clean arch or ring</h4>
+        <p>One modern shape behind Bappa. A 3–4 ft <strong>metal or wooden ring</strong> (half-floralled, half-bare) or a slim rectangular arch in matte gold/brass. Modern minimal loves a single geometric line. Skip the thermocol temple cutout entirely — it instantly dates the setup.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Layer 3 · Height</span>
+        <h4>Risers and levels</h4>
+        <p>Stack <strong>2–3 platforms of different heights</strong> under and beside the idol: the idol on the highest, diyas on one mid-level, flowers or a brass urli on another. Varying heights within 15–30 cm is what makes a small mandap read as designed. Use acrylic blocks for a floating look.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Layer 4 · Florals</span>
+        <h4>One-variety massing</h4>
+        <p>Pick <strong>one flower, used generously</strong> — all-white tuberose, or all-marigold, or all-shevanti. Monochrome massing looks expensive; mixed-colour bunches look busy. Add texture with one green (mango leaf, paan leaf, or durva) rather than a third colour. Full detail in the florals section below.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Layer 5 · Metal</span>
+        <h4>Brass as the only ornament</h4>
+        <p>Brass diya set, a brass bell, a brass modak/naivedya plate, one urli. Keep to <strong>one metal finish</strong> across everything (all warm brass, or all matte gold — never mixing chrome and brass). A single metal language = instant cohesion.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Layer 6 · Movement</span>
+        <h4>Something that moves or glows softly</h4>
+        <p>A thin strand of <strong>hanging brass bells</strong> at one side, a sheer dupatta that catches the fan’s breeze, floating candles in a shallow brass bowl, or a single incense stick with visible smoke. Still photos look styled; moving elements make it feel alive.</p>
+      </div>
+      <div class="card">
+        <span class="tag eco">Layer 7 · Scent &amp; sound</span>
+        <h4>The invisible layer</h4>
+        <p>The layer guests notice but can’t name. A <strong>lectric diffuser with sandalwood or mogra</strong> behind the makhar (not near the idol), one soft bhaktigeet/geet playlist at conversation volume, and fresh durva or paan leaves daily. Avoid strong dhoop right at the idol — it stains and overwhelms.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Bonus · Photography</span>
+        <h4>A “frame within the frame”</h4>
+        <p>Hang a thin brass or rattan <strong>empty frame</strong> 3–4 ft in front of the mandap, or place a couple of floor cushions and a low brass lamp at 6 ft. Gives family photos a designed foreground and keeps people from crowding the idol.</p>
+      </div>
+    </div>
+
+    <figure style="margin-top:20px">
+      <img src="images/detail-ideas.jpg" alt="Flat lay of modern Ganesh decoration details: brass diya, modak dish, mango leaves, jasmine, tuberose, ceramic and brass accents">
+      <figcaption>The detail kit — brass diya + modak dish, mango leaves bound in jute, jasmine, tuberose, terracotta, ivory runner. Everything in one finish family.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ LIGHTING ============ -->
+<section id="lighting">
+  <div class="wrap">
+    <h2>The lighting recipe (this is the real secret)</h2>
+    <p class="sub">Serial lights are <em>decoration</em>. What’s missing is <em>lighting</em>. Three distinct layers, all warm (2700K–3000K), all dimmable where possible.</p>
+
+    <table>
+      <thead>
+        <tr><th style="width:22%">Layer</th><th style="width:40%">What &amp; where</th><th>Why it works</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Ambient wash</strong></td>
+          <td>5 m warm COB LED strip on the floor, tucked behind the makhar base, aimed up the backdrop. Add a second short strip at the top of the backdrop aimed down.</td>
+          <td>Eliminates the dark gap between makhar and wall. Fabric gains texture; the whole alcove starts to glow.</td>
+        </tr>
+        <tr>
+          <td><strong>2. Accent / key</strong></td>
+          <td>Two small spotlights or picture lights, 45° to the idol’s front-left and front-right, 1–1.5 m away, beam aimed at the face and trunk.</td>
+          <td>Sculpts the idol — this is what makes the murti itself look luminous while everything else stays soft.</td>
+        </tr>
+        <tr>
+          <td><strong>3. Ritual / sparkle</strong></td>
+          <td>Your existing serial/fairy lights (keep, but hide the wires), plus diyas at the front edge and 3–5 floating candles in a shallow bowl.</td>
+          <td>Living flame adds the warmth no LED replicates, and the eye always goes to movement.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="grid g3" style="margin-top:18px">
+      <div class="card"><h4>💡 Do</h4><p>Use only <strong>warm white</strong> (2700K). Mixing cool white with warm brass is the single most common mistake — it makes gold look grey. Keep all wires taped along the backdrop edges and behind the makhar. Put everything on one switch or a smart plug so the whole look turns on in one motion.</p></div>
+      <div class="card"><h4>🚫 Don’t</h4><p>No RGB / colour-changing lights, no blinking modes, no blue or green wash on the idol. No bare LED strip visible in reflection — diffuse it behind sheer fabric or inside a channel.</p></div>
+      <div class="card"><h4>🔌 Practical</h4><p>Use a <strong>5V USB strip</strong> or a BIS-marked 12V adapter with a proper driver; never run 230V bare-wire rope lights within reach. Total added load here is under 60 W. Add a small surge-protected spike guard for the whole mandap.</p></div>
+    </div>
+
+    <div class="warn" style="margin-top:18px">
+      <strong>Diya safety:</strong> keep every open flame at least 30 cm from fabric, drapes, garlands and the backdrop — especially with a fan or AC running. Use brass/metal diya holders on a non-combustible tray (marble, steel, ceramic) and never leave a flame unattended overnight. LED tea-lights are a completely acceptable substitute for the ones placed deep inside the décor.
+    </div>
+  </div>
+</section>
+
+<!-- ============ PALETTE ============ -->
+<section id="palette">
+  <div class="wrap">
+    <h2>Pick one palette — then keep everything inside it</h2>
+    <p class="sub">Modern minimal fails when too many colours enter the frame. Choose one of these and let every new purchase obey it.</p>
+    <div class="palette">
+      <div class="p">
+        <div class="swatch"><span style="background:#f6efe2"></span><span style="background:#c9a227"></span><span style="background:#8a6a34"></span><span style="background:#3b3428"></span></div>
+        <strong>Ivory &amp; Antique Brass</strong>
+        <small>Timeless, photographs beautifully, easiest to source. Flowers: white tuberose + mogra.</small>
+      </div>
+      <div class="p">
+        <div class="swatch"><span style="background:#eef1e8"></span><span style="background:#6f7f63"></span><span style="background:#d8b25f"></span><span style="background:#faf8f3"></span></div>
+        <strong>Sage &amp; Gold</strong>
+        <small>Calm, organic, very “designer”. Pairs with banana leaf, durva, eucalyptus, dried grasses.</small>
+      </div>
+      <div class="p">
+        <div class="swatch"><span style="background:#fdf3e3"></span><span style="background:#e08a20"></span><span style="background:#b4442f"></span><span style="background:#7d5a3c"></span></div>
+        <strong>Terracotta &amp; Marigold</strong>
+        <small>Warm and devotional but disciplined — one marigold tone, terracotta props, ivory cloth.</small>
+      </div>
+      <div class="p">
+        <div class="swatch"><span style="background:#f7f4ee"></span><span style="background:#e5dccb"></span><span style="background:#b8873a"></span><span style="background:#2a2118"></span></div>
+        <strong>Monochrome Marigold-on-Ivory</strong>
+        <small>Strictly two hues plus one metal. The most “minimal” of the four; least is more.</small>
+      </div>
+    </div>
+    <div class="note" style="margin-top:16px">
+      <strong>Rule of three:</strong> one base colour (cloth) + one accent colour (flowers) + one metal. Anything else you’re about to buy, ask it which of the three it belongs to. If the answer is “none”, it doesn’t go in.
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLORALS ============ -->
+<section id="florals">
+  <div class="wrap">
+    <h2>Flowers &amp; foliage: what to add now</h2>
+    <p class="sub">Mid-September in Nagpur is a good flower week — marigold, shevanti (chrysanthemum), mogra/jai, rajnigandha and lotus are all in season and cheap.</p>
+
+    <div class="grid g2">
+      <div class="card">
+        <h4>🌼 Add for fullness (₹150–400/day)</h4>
+        <ul class="tick">
+          <li><strong>Shevanti (chrysanthemum)</strong> — the workhorse. Dense, long-lasting (3–4 days), holds shape. Buy in one colour only.</li>
+          <li><strong>Rajnigandha / tuberose</strong> — white, fragrant, elegant. A single loose bundle in a vase beats a tight garland for a modern look.</li>
+          <li><strong>Mogra (jai)</strong> — string a thin single strand, or scatter a handful loose on the platform. Unbeatable fragrance at aarti time.</li>
+          <li><strong>Lotus (kamal)</strong> — 3–5 buds in a shallow brass urli with water. The single most “premium” thing you can add for ~₹100.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>🌿 Add for texture (greens, lasts 5–7 days)</h4>
+        <ul class="tick">
+          <li><strong>Mango leaf toran</strong> on the top edge of the backdrop — instantly reads auspicious and stays fresh for a week.</li>
+          <li><strong>Paan/betel leaves</strong> — glossy, structured, very Maharashtrian; tuck 5–7 into a brass bowl.</li>
+          <li><strong>Durva (doob) grass</strong> — a small fresh mound on a marble coaster near the idol; Bappa’s favourite, and it costs nothing.</li>
+          <li><strong>Banana leaves / sugarcane stalks</strong> — 2 slim sugarcane sticks leaning asymmetrically at one side give height and tradition without clutter.</li>
+          <li><strong>Dried pampas / bunny tails / wheat</strong> — for a modern-minimal look these beat plastic flowers entirely, and they survive all 10 days.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Three arrangements that look designed, not assembled</h3>
+    <div class="grid g3">
+      <div class="card"><h4>The Crescent</h4><p>One dense arc of flowers sweeping from the upper-left corner down to the idol’s shoulder, leaving the right side bare. Asymmetry is what makes it look intentional.</p></div>
+      <div class="card"><h4>The Half Ring</h4><p>A 3 ft ring/arch, floralled on only 60–70% of its length. The bare portion is the design — don’t fill it.</p></div>
+      <div class="card"><h4>The Float</h4><p>A wide shallow brass urli with 2 cm of water, 5 lotus buds, loose shevanti petals and 3 floating candles, placed <em>low and in front</em>, off-centre.</p></div>
+    </div>
+
+    <div class="eco" style="margin-top:16px">
+      <strong>Keep it fresh through 23 Sept:</strong> mist garlands with water twice a day, pull spent blooms every morning (a tired marigold ruins an otherwise perfect frame), and buy 70% of your flowers fresh on day 1, 5 and 8. Use a cotton/dori garland base, never plastic-wrapped thermocol — it makes visarjan messy and is banned in many societies.
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLOOR ============ -->
+<section id="floor">
+  <div class="wrap">
+    <h2>Floor &amp; foreground — the most skipped, highest-value area</h2>
+    <p class="sub">Most people decorate up to the makhar edge and stop. The 4 feet in front of it is what people actually see in photos.</p>
+    <div class="grid g2">
+      <div class="card">
+        <h4>Ground layer</h4>
+        <ul class="tick">
+          <li>A <strong>jute or cotton runner</strong> (2.5 × 5 ft) in ivory/natural — defines the space and hides wires running to the strip light.</li>
+          <li>A <strong>minimal rangoli</strong>: thin single-line lotus or a simple arc, in 2 colours only + white. Use a stencil or chalk outline first. Modern = restraint; a big filled multi-colour rangoli fights a minimal palette.</li>
+          <li>Two low <strong>floor cushions or a small jute pouffe</strong> at 5–6 ft for seating during aarti.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Foreground objects</h4>
+        <ul class="tick">
+          <li>A pair of <strong>matte ceramic or stone vases</strong> at slightly different heights, flanking the mandap, each with one stem — not a bouquet.</li>
+          <li>One <strong>low brass lamp or hurricane candle</strong> on the floor at the left edge for a warm bottom-corner glow.</li>
+          <li>The <strong>naivedya styling</strong>: brass thali, modak on a small marble plate, a folded ivory napkin, one durva sprig. Style it like food photography — it’s in every aarti photo.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REMOVE ============ -->
+<section id="remove">
+  <div class="wrap">
+    <h2>First, remove these (subtraction is the upgrade)</h2>
+    <p class="sub">Half of “more beautiful” is “less busy”. Walk up to the mandap and pull out:</p>
+    <div class="grid g2">
+      <div class="card">
+        <ul class="tick">
+          <li>The second and third garland doing the same job as the first.</li>
+          <li>Any plastic flower, thermocol cutout, or shiny gift-wrap paper.</li>
+          <li>Visible wires, adapters, extension boards, tape residue.</li>
+          <li>Mixed-metal items (a steel thali next to brass next to silver).</li>
+          <li>Stickers, tinsel, streamers, balloon clusters.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <ul class="tick">
+          <li>Anything at idol’s eye level that competes for attention.</li>
+          <li>Extra idols/photos/deities clustered around the base — keep one clear focal point.</li>
+          <li>Wilted or browned flowers (daily, 2-minute job).</li>
+          <li>The cool-white bulb in the room if you can change it to warm.</li>
+          <li>Clutter on the platform: matchbox, incense packet, mobile phone, spare remote — clear it.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note" style="margin-top:16px">Stand 8 feet back and squint. Whatever your eye lands on first should be Bappa. If it lands on something else, that thing goes.</div>
+  </div>
+</section>
+
+<!-- ============ QUICK WINS ============ -->
+<section id="quick">
+  <div class="wrap">
+    <h2>Thirty-minute wins you can do today</h2>
+    <div class="grid g3">
+      <div class="card"><h4>1. Raise the idol</h4><p>Slip a wrapped wooden plank or marble slab under the makhar. 10 minutes, instant presence.</p></div>
+      <div class="card"><h4>2. Hide the wires</h4><p>Tape every cable along the backdrop edge and down one leg. 15 minutes, looks 3× more expensive.</p></div>
+      <div class="card"><h4>3. Swap to warm</h4><p>Replace any cool-white bulb in the room with warm white. Free-ish, huge difference.</p></div>
+      <div class="card"><h4>4. One metal only</h4><p>Pull the mismatched steel/silver pieces; keep brass. Free.</p></div>
+      <div class="card"><h4>5. Float the flowers</h4><p>Lotus buds + petals in a bowl of water with floating candles. ₹150, 5 minutes, biggest guest reaction.</p></div>
+      <div class="card"><h4>6. Clear the platform</h4><p>Everything except idol, diya and naivedya comes off. Free, and it’s the most visible change of all.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAYWISE ============ -->
+<section id="daywise">
+  <div class="wrap">
+    <h2>Day-by-day plan (14 → 23 Sept)</h2>
+    <table>
+      <thead><tr><th style="width:20%">When</th><th>What to add / refresh</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Day 0 · 13 Sept (eve)</strong></td><td>Install lighting layers (strip + two accents), riser, sheer overlay, runner. Do the removal pass. Test all lights before Sthapana.</td></tr>
+        <tr><td><strong>Day 1 · 14 Sept</strong></td><td>Sthapana in the Madhyahna muhurat. Fresh mango-leaf toran, durva, one-variety garland, brass diya + naivedya. Keep the palette to 3 elements.</td></tr>
+        <tr><td><strong>Days 2–4</strong></td><td>Morning: pull spent blooms, mist garlands, top up urli water. Evening: light the diya 15 min before aarti so the fragrance builds.</td></tr>
+        <tr><td><strong>Day 5 · 18 Sept</strong></td><td>First flower refresh — replace garlands entirely. Swap the floral cluster to the opposite corner if you want a “new look” photo.</td></tr>
+        <tr><td><strong>Days 6–8</strong></td><td>Add something new and small each day: bells, a fresh dupatta drape, a new brass piece, sugarcane stalks.</td></tr>
+        <tr><td><strong>Day 10 · 23 Sept</strong></td><td>Anant Chaturdashi. Extra marigold, brighter diya row, family photo corner in use. Keep flowers and decorations separate at visarjan — only natural materials go into the water.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ SHOPPING ============ -->
+<section id="shopping">
+  <div class="wrap">
+    <h2>Shopping list</h2>
+    <p class="sub">Tick items as you buy. Prices are indicative Nagpur retail (Sept 2026) — your total updates automatically and saves in this browser.</p>
+
+    <h3>Tier A — do these first (structure &amp; light)</h3>
+    <ul class="check" data-group="A">
+      <li><input type="checkbox" data-price="700"><div class="body"><div class="t">Warm white COB LED strip, 5 m (2700K, with adapter)</div><div class="d">Uplight behind the makhar — the single biggest upgrade</div></div><div class="p">₹400–900</div></li>
+      <li><input type="checkbox" data-price="1400"><div class="body"><div class="t">Two warm accent spotlights / picture lights</div><div class="d">45° to the idol, front-left and front-right</div></div><div class="p">₹800–2,000</div></li>
+      <li><input type="checkbox" data-price="900"><div class="body"><div class="t">Sheer organza/voile panel, 2 m (ivory or champagne)</div><div class="d">Second layer in front of the existing backdrop</div></div><div class="p">₹600–1,500</div></li>
+      <li><input type="checkbox" data-price="800"><div class="body"><div class="t">Riser: acrylic block / marble slab / wrapped plank</div><div class="d">3–5 inch lift for the makhar</div></div><div class="p">₹500–1,500</div></li>
+      <li><input type="checkbox" data-price="1600"><div class="body"><div class="t">Metal or wooden arch / ring, 3–4 ft, matte gold</div><div class="d">One geometric line; half-floralled only</div></div><div class="p">₹800–2,500</div></li>
+      <li><input type="checkbox" data-price="500"><div class="body"><div class="t">Surge-protected spike guard + cable clips/tape</div><div class="d">One switch for the whole mandap, no visible wires</div></div><div class="p">₹350–700</div></li>
+    </ul>
+
+    <h3>Tier B — brass &amp; props</h3>
+    <ul class="check" data-group="B">
+      <li><input type="checkbox" data-price="1500"><div class="body"><div class="t">Brass urli / wide shallow bowl (12–16 inch)</div><div class="d">Floating lotus + petals + candles, low and off-centre</div></div><div class="p">₹800–2,500</div></li>
+      <li><input type="checkbox" data-price="1100"><div class="body"><div class="t">Brass diya set (5–7 diyas) + brass bell</div><div class="d">One metal finish throughout</div></div><div class="p">₹600–1,800</div></li>
+      <li><input type="checkbox" data-price="1200"><div class="body"><div class="t">Brass/marble modak &amp; naivedya plate</div><div class="d">In every aarti photo — worth spending on</div></div><div class="p">₹600–1,800</div></li>
+      <li><input type="checkbox" data-price="1400"><div class="body"><div class="t">Two matte ceramic/stone vases, different heights</div><div class="d">One stem each, flanking the mandap</div></div><div class="p">₹600–1,800</div></li>
+      <li><input type="checkbox" data-price="700"><div class="body"><div class="t">Small brass Om / wall accent, or a thin empty frame</div><div class="d">Frame-within-frame for photographs</div></div><div class="p">₹400–1,200</div></li>
+      <li><input type="checkbox" data-price="800"><div class="body"><div class="t">Jute/cotton runner 2.5 × 5 ft, ivory or natural</div><div class="d">Defines the floor, hides wires</div></div><div class="p">₹400–1,200</div></li>
+    </ul>
+
+    <h3>Tier C — fresh &amp; consumable</h3>
+    <ul class="check" data-group="C">
+      <li><input type="checkbox" data-price="250"><div class="body"><div class="t">Mango leaf toran (fresh)</div><div class="d">Top edge of backdrop; lasts 5–7 days</div></div><div class="p">₹150–400</div></li>
+      <li><input type="checkbox" data-price="300"><div class="body"><div class="t">Shevanti / chrysanthemum, one colour, 2 kg</div><div class="d">The fullness workhorse — refresh on day 5 and 8</div></div><div class="p">₹200–400</div></li>
+      <li><input type="checkbox" data-price="200"><div class="body"><div class="t">Rajnigandha / tuberose bundle</div><div class="d">White, fragrant, elegant in a vase</div></div><div class="p">₹150–300</div></li>
+      <li><input type="checkbox" data-price="150"><div class="body"><div class="t">Mogra (jai) string</div><div class="d">Fragrance at aarti</div></div><div class="p">₹100–250</div></li>
+      <li><input type="checkbox" data-price="150"><div class="body"><div class="t">Lotus buds ×5</div><div class="d">Float in the urli — the cheapest “premium”</div></div><div class="p">₹100–250</div></li>
+      <li><input type="checkbox" data-price="120"><div class="body"><div class="t">Durva grass + paan leaves</div><div class="d">Fresh mound on a marble coaster</div></div><div class="p">₹50–200</div></li>
+      <li><input type="checkbox" data-price="400"><div class="body"><div class="t">Dried pampas / bunny tails / wheat bunch</div><div class="d">Modern texture, survives all 10 days</div></div><div class="p">₹300–1,200</div></li>
+      <li><input type="checkbox" data-price="700"><div class="body"><div class="t">Electric diffuser + sandalwood / mogra oil</div><div class="d">Behind the makhar, never right at the idol</div></div><div class="p">₹400–1,500</div></li>
+      <li><input type="checkbox" data-price="200"><div class="body"><div class="t">Rangoli colours (2 shades + white) or a stencil</div><div class="d">Thin single-line lotus or arc</div></div><div class="p">₹150–600</div></li>
+      <li><input type="checkbox" data-price="350"><div class="body"><div class="t">LED tea-lights ×12 (for deep-inside placements)</div><div class="d">Flame look where a real diya isn’t safe</div></div><div class="p">₹200–500</div></li>
+    </ul>
+
+    <h3>Tier D — only if you want the full effect</h3>
+    <ul class="check" data-group="D">
+      <li><input type="checkbox" data-price="1200"><div class="body"><div class="t">Pleated backdrop fabric in your base colour</div><div class="d">Replace the existing cloth if it’s shiny or busy</div></div><div class="p">₹800–2,500</div></li>
+      <li><input type="checkbox" data-price="900"><div class="body"><div class="t">Two floor cushions / jute pouffe</div><div class="d">Seating + photo foreground</div></div><div class="p">₹500–1,500</div></li>
+      <li><input type="checkbox" data-price="400"><div class="body"><div class="t">Sugarcane stalks ×2 (or banana-leaf bundle)</div><div class="d">Traditional height, asymmetric placement</div></div><div class="p">₹200–800</div></li>
+      <li><input type="checkbox" data-price="1100"><div class="body"><div class="t">Chiffon / tissue dupatta for the idol drape</div><div class="d">Catches the fan breeze — adds movement</div></div><div class="p">₹400–1,500</div></li>
+      <li><input type="checkbox" data-price="2200"><div class="body"><div class="t">Small Bluetooth speaker</div><div class="d">Soft aarti/geet at conversation volume</div></div><div class="p">₹1,500–4,000</div></li>
+    </ul>
+
+    <div class="totalbar">
+      <div>
+        <div class="amt">Estimated total: ₹<span id="total">0</span></div>
+        <div class="mini"><span id="count">0</span> items ticked · indicative retail, Nagpur</div>
+      </div>
+      <button class="btn" id="reset">Reset list</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SAFETY ============ -->
+<section id="safety">
+  <div class="wrap">
+    <h2>Safety &amp; eco notes</h2>
+    <div class="grid g2">
+      <div class="card eco">
+        <h4>🌱 Eco-conscious choices</h4>
+        <ul class="tick">
+          <li>Shadu/clay idol with natural-colour paint — no Plaster of Paris, no glossy chemical paint.</li>
+          <li>Cotton-dori garlands, no thermocol, no plastic backing, no glitter spray.</li>
+          <li>At visarjan: flowers and leaves go into the water or compost; plastic, wire, thermocol and LED strips must be removed and dry-waste binned.</li>
+          <li>Better still: symbolically immerse the idol at home in a bucket/tub, reuse the same murti next year if your family custom allows.</li>
+        </ul>
+      </div>
+      <div class="card warn">
+        <h4>🔥 Safety</h4>
+        <ul class="tick">
+          <li>30 cm minimum clearance between any flame and fabric, drapes or garlands.</li>
+          <li>Metal/glass/ceramic tray under every diya; nothing combustible underneath.</li>
+          <li>BIS-marked adapters and LED drivers only; one spike guard; switch off at night.</li>
+          <li>Keep the floor clear — aarti involves movement, rangoli powder and oil.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p style="margin-bottom:8px"><strong>Ganpati Bappa Morya! 🐘</strong> — Start with Tier A, and do the removal pass tonight. Those two things alone will change how the whole mandap reads.</p>
+    <p class="src">
+      Festival dates: Ganesh Chaturthi observed Monday, 14 September 2026, with Madhyahna puja muhurat roughly 11:00–13:35 and visarjan on Anant Chaturdashi, 23 September 2026
+      (<a href="https://www.indiatoday.in/amp/information/story/ganesh-chaturthi-2026-date-puja-muhurat-visarjan-september-14-2989514-2026-09-08" target="_blank" rel="noopener">India Today</a>,
+      <a href="https://www.prokerala.com/astrology/ganesh-chaturthi-14-september-2026-timings.htm" target="_blank" rel="noopener">Prokerala</a>).
+      Confirm exact local timings with your family pandit or a Nagpur-specific panchang.
+    </p>
+  </div>
+</footer>
+
+<script>
+  const boxes = [...document.querySelectorAll('.check input')];
+  const totalEl = document.getElementById('total');
+  const countEl = document.getElementById('count');
+  const KEY = 'ganesh-decor-2026';
+
+  function render(){
+    let total = 0, count = 0;
+    boxes.forEach(b => {
+      const li = b.closest('li');
+      if (b.checked){
+        total += Number(b.dataset.price || 0);
+        count++;
+        li.classList.add('done');
+      } else {
+        li.classList.remove('done');
+      }
+    });
+    totalEl.textContent = total.toLocaleString('en-IN');
+    countEl.textContent = count;
+    try {
+      localStorage.setItem(KEY, JSON.stringify(boxes.map(b => b.checked)));
+    } catch(e){}
+  }
+
+  try {
+    const saved = JSON.parse(localStorage.getItem(KEY) || '[]');
+    if (Array.isArray(saved)) saved.forEach((v,i) => { if (boxes[i]) boxes[i].checked = !!v; });
+  } catch(e){}
+
+  boxes.forEach(b => b.addEventListener('change', render));
+  document.getElementById('reset').addEventListener('click', () => {
+    boxes.forEach(b => b.checked = false);
+    render();
+  });
+  render();
+</script>
+</body>
+</html>
